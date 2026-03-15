@@ -493,6 +493,9 @@ languages:
               - “EKF”
               - “电路设计”
               - “嵌入式开发”
+            links:
+              - icon: fas fa-photo-video
+                url: /gallery/meam510
             content: |
               独立完成基于 ESP32-S3 的整车设计、开发与部署。
 
@@ -506,6 +509,9 @@ languages:
               - “POSIX”
               - “Linux”
               - “系统编程”
+            links:
+              - icon: fab fa-github
+                url: https://github.com/CIS548/26sp-cis5480-pennos-21
             content: |
               基于 C 语言与 POSIX API 从零实现操作系统核心组件。
 
