@@ -282,9 +282,10 @@ languages:
       contact:
         enable: true
         title: "Get In Touch"
-        content: I'm currently seeking internship opportunities in robotics and control systems. Whether you have a question about my projects or want to discuss potential collaborations, feel free to reach out!
-        btnName: Email Me
-        btnLink: mailto:Wang2003@seas.upenn.edu
+        content: |-
+          I'm currently seeking internship opportunities in robotics and control systems. Whether you have a question about my projects or want to discuss potential collaborations, feel free to reach out!
+
+          **Email:** Wang2003@seas.upenn.edu
 
       # ==================== FOOTER SECTION ====================
       footer:
@@ -573,9 +574,10 @@ languages:
       contact:
         enable: true
         title: "联系我"
-        content: 我目前正在寻找机器人和控制系统方向的实习机会。如果你对我的项目有任何疑问，或想探讨合作，欢迎随时联系！
-        btnName: 发送邮件
-        btnLink: mailto:Wang2003@seas.upenn.edu
+        content: |-
+          我目前正在寻找机器人和控制系统方向的实习机会。如果你对我的项目有任何疑问，或想探讨合作，欢迎随时联系！
+
+          **邮箱：** Wang2003@seas.upenn.edu
 
       # ==================== FOOTER SECTION ====================
       footer:
