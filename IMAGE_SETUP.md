@@ -5,7 +5,7 @@
 我已经修复了以下问题：
 
 1. **修复了 Robocon 项目的图片路径错误**
-   - 原路径：`static/images/projects/mywebsite/static/images/projects/robocon.png`（错误）
+   - 原路径：`static/images/projects/profile/static/images/projects/robocon.png`（错误）
    - 新路径：`/images/projects/robocon.png`（正确）✅
 
 2. **修复了重复的 `content` 键错误**
@@ -57,7 +57,7 @@
 
 ```bash
 # 进入项目目录
-cd mywebsite
+cd profile
 
 # 复制 Achievements 图片
 cp /path/to/ieee-paper.jpg static/images/achievements/
@@ -98,11 +98,11 @@ image: /images/projects/fault-detection.jpg
 ### 步骤 4：本地预览
 
 ```bash
-cd mywebsite
+cd profile
 hugo server -D
 ```
 
-在浏览器打开 `http://localhost:1313/mywebsite/` 检查图片是否正确显示。
+在浏览器打开 `http://localhost:1313/profile/` 检查图片是否正确显示。
 
 ### 步骤 5：提交并部署
 
@@ -137,7 +137,7 @@ git push origin main
 你可以暂时使用 `robocon.png` 作为所有项目的占位图：
 
 ```bash
-cd mywebsite/static/images
+cd profile/static/images
 
 # 复制 robocon.png 作为占位图
 cp projects/robocon.png achievements/ieee-paper.jpg

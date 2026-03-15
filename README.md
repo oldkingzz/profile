@@ -1,4 +1,4 @@
-# 🚀 快速开始指南
+# README - Vincent Wang's Portfolio Setup
 
 ## ✅ 已完成的工作
 
@@ -87,11 +87,11 @@ static/
 ### 第四步：本地预览
 
 ```bash
-cd mywebsite
+cd profile
 hugo server -D
 ```
 
-在浏览器打开 `http://localhost:1313/mywebsite/` 查看效果。
+在浏览器打开 `http://localhost:1313/profile/` 查看效果。
 
 ### 第五步：提交并部署
 

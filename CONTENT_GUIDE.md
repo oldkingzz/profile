@@ -5,7 +5,7 @@
 你的 Hugo 作品集网站主要由以下文件和目录组成：
 
 ```
-mywebsite/
+profile/
 ├── hugo.yaml                    # 主配置文件 - 所有内容都在这里！
 ├── static/                      # 静态资源目录
 │   ├── resume.pdf              # 你的简历 PDF（需要添加）
@@ -183,11 +183,11 @@ skills:
 修改完成后，在本地预览你的网站：
 
 ```bash
-cd mywebsite
+cd profile
 hugo server -D
 ```
 
-然后在浏览器打开 `http://localhost:1313/mywebsite/`
+然后在浏览器打开 `http://localhost:1313/profile/`
 
 ---
 
@@ -201,7 +201,7 @@ git commit -m "Update portfolio content with personal information"
 git push origin main
 ```
 
-GitHub Actions 会自动构建并部署你的网站到 `https://oldkingzz.github.io/mywebsite/`
+GitHub Actions 会自动构建并部署你的网站到 `https://oldkingzz.github.io/profile/`
 
 ---
 
