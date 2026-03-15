@@ -95,6 +95,7 @@ languages:
         title: "Work Experience"
         items:
           - company: "UPenn GRASP Lab (Vijay Kumar Lab)"
+            companyUrl: "https://www.kumarrobotics.org/"
             jobs:
               - name: "Research Assistant"
                 date: "Jan 2026 - Present"
@@ -385,6 +386,7 @@ languages:
         title: "工作经验"
         items:
           - company: "宾夕法尼亚大学 GRASP 实验室 (Vijay Kumar Lab)"
+            companyUrl: "https://www.kumarrobotics.org/"
             jobs:
               - name: "研究助理"
                 date: "2026年1月 - 至今"
