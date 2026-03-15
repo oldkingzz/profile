@@ -286,7 +286,7 @@ languages:
         enable: true
         intro: "你好，我是"
         title: "Vincent Wang (王泽森)"
-        subtitle: "机器人工程师 & 控制系统专家"
+        subtitle: "AI 系统工程师 & 具身智能研究者"
         content: "宾夕法尼亚大学 (UPenn) MEAN 硕士在读，专注机电一体化与机器人。热衷于自主系统开发、ROS 架构及嵌入式控制。拥有从零构建高性能机器人系统的实战经验。"
         image: /images/gemini.png
         bottomImage:
