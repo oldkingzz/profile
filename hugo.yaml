@@ -294,7 +294,7 @@ languages:
         button:
           enable: true
           name: "下载简历"
-          url: "/VincentWangCV.docx"
+          url: "/VincentWangCV_ZH.docx"
           download: true
           newPage: false
         socialLinks:
