@@ -494,8 +494,8 @@ languages:
               - “电路设计”
               - “嵌入式开发”
             links:
-              - icon: fas fa-photo-video
-                url: /gallery/meam510
+              - icon: fab fa-youtube
+                url: https://youtu.be/hBenPNBlztI
             content: |
               独立完成基于 ESP32-S3 的整车设计、开发与部署。
 
