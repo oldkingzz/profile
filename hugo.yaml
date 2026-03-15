@@ -321,31 +321,46 @@ languages:
           enable: true
           title: "技术栈与工具："
           items:
-            - "ROS2 & Navigation Stack"
-            - "C++ / Python / Rust"
-            - "MATLAB & Simulink"
-            - "嵌入式系统 (STM32)"
-            - "计算机视觉 (YOLO, OpenCV)"
-            - "Linux & Git/CMake"
-            - "CAD (Fusion360, Creo)"
-            - "控制理论 & SLAM"
+            - "编程语言：Python、C/C++、Rust"
+            - "AI 框架：PyTorch、DDP 分布式训练、VLM/VLA 微调"
+            - "机器人栈：ROS2 (Navigation/MoveIt)、SLAM"
+            - "嵌入式系统：ESP-IDF、STM32、CAN 总线"
+            - "系统开发：Linux、RTOS、Git、Valgrind"
+            - "GPU 集群：Slurm 调度、NVIDIA B200"
+            - "MATLAB & Simulink、FOC 电机算法"
+            - "AI 编程：Claude Code、Antigravity"
 
       # ==================== EXPERIENCE SECTION ====================
       experience:
         enable: true
         title: "工作经验"
         items:
-          - company: "上海宇集科技 (Shanghai Uji Technology)"
+          - company: "宾夕法尼亚大学 GRASP 实验室 (Vijay Kumar Lab)"
+            jobs:
+              - name: "研究助理"
+                date: "2026年1月 - 至今"
+                content: |
+                  主导基于视觉-语言-动作 (VLA) 大模型的机器人操控研究，负责分布式训练管线搭建与极限性能优化。
+
+                  - **VLA 模型与集群训练：** 主导搭建基于 VLA 大模型的预测流水线，引入动态系统 (DS) 重构传统 Tokenizer；从零构建 PyTorch DDP 分布式训练管线，在 8 卡 B200 节点进行大规模并行训练
+                  - **极限性能优化：** 深度重构多模态 DataLoader 底层逻辑，消除 I/O 瓶颈，将 GPU 利用率从 40% 飙升至 99%；精细化调参实现对单卡显存的极限压榨 (188/192GB)
+                  - **模型定制：** 成功复现并定制开源 VLA 框架，将原生 Gemma-4B 替换为轻量级预训练 Transformer (130M 参数) 以适配下游模块
+                featuredItems:
+                  fontAwesomeIcons:
+                    - icon: fas fa-brain
+                      tooltip: AI/深度学习
+                    - icon: fas fa-server
+                      tooltip: GPU 集群训练
+
+          - company: "上海舞肌科技"
             jobs:
               - name: "机器人控制实习生"
                 date: "2024年7月 - 2024年9月"
                 content: |
                   为多轴机械臂开发了高保真远端操作（Teleoperation）系统及先进控制算法。
 
-                  - 在 MATLAB/Simulink 中设计并仿真了基于电机 FOC 算法的远操系统
-                  - 通过将阻抗控制（Impedance）重构为导纳控制（Admittance）模型，解决了关键的不稳定性问题
-                  - 集成力矩传感器反馈，实现了稳定且高灵敏度的力反馈复制
-                  - 开发了 C++ 上位机程序，通过 CAN 总线实现与约 30 台电机的稳定通信
+                  - 基于 MATLAB 搭建遥操作平台并部署 FOC 算法；采用导纳控制架构重构控制环并集成力矩反馈，彻底解决调试期寄生锁定问题，实现高灵敏度力反馈复现
+                  - 开发基于 C++ 的 Linux 上位机，利用 CAN 协议构建与 30 余台底层电机的高鲁棒性通信网络及高效控制
                 featuredItems:
                   fontAwesomeIcons:
                     - icon: fas fa-robot
@@ -376,31 +391,33 @@ languages:
         title: "教育背景"
         index: false
         items:
-          - title: "机械工程与应用力学硕士"
+          - title: "机械工程与应用力学硕士（机器人方向）"
             school:
               name: "宾夕法尼亚大学 (UPenn)"
               url: "https://www.seas.upenn.edu/"
             date: "2025年9月 - 至今"
-            GPA: "进行中"
+            GPA: "3.9"
             content: |-
               **专业方向：** 机电一体化与机器人
 
               **核心课程：**
-              - 高级动力学 (Advanced Dynamics)
-              - 机电系统设计 (Design of Mechatronics Systems)
-              - 工程数学基础 (Foundations of Engineering Mathematics)
+              - 先进动力学 (Advanced Dynamics)
+              - 机电一体化设计 (Design of Mechatronics Systems)
+              - 操作系统及开发 (Operating Systems)
+              - 高等机器人技术 (Advanced Robotics)
 
           - title: "智能制造工程学士"
             school:
               name: "华东理工大学 (ECUST)"
               url: "https://www.ecust.edu.cn"
             date: "2021年9月 - 2025年6月"
-            GPA: "排名：前 15%"
+            GPA: "3.6"
             content: |-
+              **核心课程：** 人工智能技术、嵌入式系统、测量与控制系统、概率论
+
               **主要成就：**
               - 华东理工大学 Robocon 战队联合创始人及控制组组长
               - 以第一作者身份在 IEEE MEAE 2024 发表论文
-
 
               **重点项目：**
               - 基于 NUC 的 SLAM 与视觉自主机器人系统
@@ -453,21 +470,47 @@ languages:
           - title: 多领域自适应故障检测 (IEEE 论文)
             image: /images/projects/MEAE.png
             badges:
-              - "深度学习"
-              - "Python"
-              - "PyTorch"
-              - "信号处理"
+              - “深度学习”
+              - “Python”
+              - “PyTorch”
+              - “信号处理”
             links:
               - icon: fas fa-file-pdf
-                url: "https://ieeexplore.ieee.org/document/11026598"
+                url: “https://ieeexplore.ieee.org/document/11026598”
             content: |
               开发了一种新型深度学习策略，用于不同工况下的机械故障检测。
 
               **发表：** IEEE MEAE 2024 (第一作者)
 
               - 使用 PyTorch 架构了端到端的深度学习管线（CNN/TCN + Transformer），从时间序列传感器数据中诊断机械故障
-              - 通过引入可迁移领域自适应网络 (TDAN) 和 TS2Vec，解决了关键的“领域偏移”问题（适应不断变化的运行工况）
+              - 通过引入可迁移领域自适应网络 (TDAN) 和 TS2Vec，解决了关键的”领域偏移”问题（适应不断变化的运行工况）
               - 量化了模型性能，在未知目标领域实现了 88.27% 的准确率，较基准线绝对提升了 40.6%
+
+          - title: 全栈自主移动机器人 (MEAM 510)
+            badges:
+              - “ESP32-S3”
+              - “ESP-IDF”
+              - “EKF”
+              - “电路设计”
+              - “嵌入式开发”
+            content: |
+              独立完成基于 ESP32-S3 的整车设计、开发与部署。
+
+              - 独立完成整车电路设计与硬件搭建（含焊接与布线）
+              - 基于 ESP-IDF 框架开发底层软件栈
+              - 成功部署扩展卡尔曼滤波 (EKF) 算法，实现极高精度定位、无线导航与实时寻迹等复杂闭环控制
+
+          - title: 类 Unix 操作系统核心组件 (CIS 548)
+            badges:
+              - “C”
+              - “POSIX”
+              - “Linux”
+              - “系统编程”
+            content: |
+              基于 C 语言与 POSIX API 从零实现操作系统核心组件。
+
+              - 从零实现自定义 Shell 解释器与动态内存分配器
+              - 深入掌握底层进程调度（Fork/Exec）、多线程并发管理及内存防泄漏技术
 
       # ==================== CONTACT SECTION ====================
       contact:
