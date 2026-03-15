@@ -45,8 +45,8 @@ languages:
         enable: true
         intro: "Hi, my name is"
         title: "Vincent Wang"
-        subtitle: "Robotics Engineer & Control Systems Specialist"
-        content: "M.S. student in MEAN at UPenn, specializing in Mechatronics and Robotics. Passionate about autonomous systems, ROS development, and embedded control. Experienced in building high-performance robotic systems from scratch."
+        subtitle: "Focused on AI Systems & Embodied Intelligence"
+        content: "M.S. student in MEAM at UPenn, specializing in Mechatronics and Robotics. Passionate about VLA/VLM models, distributed training, and embodied AI. Experienced in building full-stack AI-robotics systems from GPU cluster training to real-world deployment."
         image: /images/gemini.png
         bottomImage:
           enable: true
@@ -80,31 +80,46 @@ languages:
           enable: true
           title: "Technical Skills & Tools:"
           items:
-            - "ROS2 & Navigation Stack"
-            - "C++ / Python / Rust"
-            - "MATLAB & Simulink"
-            - "Embedded Systems (STM32)"
-            - "Computer Vision (YOLO, OpenCV)"
-            - "Linux & Git/CMake"
-            - "CAD (Fusion360, Creo)"
-            - "Control Theory & SLAM"
+            - "Languages: Python, C/C++, Rust"
+            - "AI Frameworks: PyTorch, DDP Training, VLM/VLA Fine-tuning"
+            - "Robotics Stack: ROS2 (Navigation/MoveIt), SLAM"
+            - "Embedded Systems: ESP-IDF, STM32, CAN Bus"
+            - "Systems Dev: Linux, RTOS, Git, Valgrind"
+            - "GPU Clusters: Slurm Scheduler, NVIDIA B200"
+            - "MATLAB & Simulink, FOC Motor Algorithms"
+            - "AI Programming: Claude Code, Antigravity"
 
       # ==================== EXPERIENCE SECTION ====================
       experience:
         enable: true
         title: "Work Experience"
         items:
-          - company: "Shanghai Uji Technology ."
+          - company: "UPenn GRASP Lab (Vijay Kumar Lab)"
+            jobs:
+              - name: "Research Assistant"
+                date: "Jan 2026 - Present"
+                content: |
+                  Leading Vision-Language-Action (VLA) model research for robotic manipulation, building distributed training pipelines and pushing GPU utilization to the limit.
+
+                  - **VLA Model & Cluster Training:** Built VLA prediction pipeline with Dynamic Systems (DS) to redesign traditional Tokenizer; built PyTorch DDP distributed training pipeline from scratch on 8x B200 GPU nodes
+                  - **Extreme Performance Optimization:** Deeply restructured multimodal DataLoader internals, eliminating I/O bottlenecks and boosting GPU utilization from 40% to 99%; fine-tuned memory usage to 188/192GB per GPU
+                  - **Model Customization:** Reproduced and customized open-source VLA framework, replacing native Gemma-4B with lightweight pre-trained Transformer (130M params) for downstream modules
+                featuredItems:
+                  fontAwesomeIcons:
+                    - icon: fas fa-brain
+                      tooltip: AI/Deep Learning
+                    - icon: fas fa-server
+                      tooltip: GPU Cluster Training
+
+          - company: "Shanghai Wuji Technology"
             jobs:
               - name: "Robotics Control Intern"
                 date: "Jul 2024 - Sep 2024"
                 content: |
                   Developed a high-fidelity teleoperation system for multi-axis manipulators with advanced control algorithms.
 
-                  - Designed and simulated teleoperation system in MATLAB/Simulink with motor FOC algorithms
-                  - Resolved critical instability by re-architecting from impedance to admittance control model
-                  - Integrated torque sensor feedback to achieve stable, high-sensitivity force replication
-                  - Developed C++ host-computer application for robust CAN bus communication with ~30 motors
+                  - Built teleoperation platform in MATLAB with FOC algorithms; re-architected control loop with admittance control and integrated torque feedback, resolving parasitic locking issues for high-sensitivity force replication
+                  - Developed C++ Linux host application using CAN protocol to build robust communication network with 30+ motors
                 featuredItems:
                   fontAwesomeIcons:
                     - icon: fas fa-robot
@@ -135,34 +150,36 @@ languages:
         title: "Education"
         index: false
         items:
-          - title: "M.S. in Mechanical Engineering and Applied Mechanics"
+          - title: "M.S. in Mechanical Engineering and Applied Mechanics (Robotics)"
             school:
               name: "University of Pennsylvania"
               url: "https://www.seas.upenn.edu/"
             date: "Sep 2025 - Present"
-            GPA: "In Progress"
+            GPA: "3.9"
             content: |-
               **Concentration:** Mechatronics and Robotics
 
               **Relevant Courses:**
               - Advanced Dynamics
               - Design of Mechatronics Systems
-              - Foundations of Engineering Mathematics
+              - Operating Systems
+              - Advanced Robotics
 
           - title: "Bachelor of Intelligent Manufacturing Engineering"
             school:
               name: "East China University of Science and Technology"
               url: "https://www.ecust.edu.cn"
             date: "Sep 2021 - Jun 2025"
-            GPA: "Ranking: TOP 15%"
+            GPA: "3.6"
             content: |-
+              **Courses:** Artificial Intelligence, Embedded Systems, Measurement & Control Systems, Probability Theory
+
               **Achievements:**
               - Co-founder and control leader of ECUST Robocon Team
               - Published first-author paper in IEEE MEAE 2024
 
-
               **Key Projects:**
-              - Autonomous robot system with SLAM and computer vision on nuc system
+              - Autonomous robot system with SLAM and computer vision on NUC
               - STM32-based embedded control system
               - Developed an AI-driven Mechanical Damage Detection Model
 
@@ -227,6 +244,38 @@ languages:
               - Architected an end-to-end deep learning pipeline in PyTorch with CNN/TCN and transformer to diagnose mechanical faults from time-series sensor data
               - Solved the critical "domain shift" problem (varying operating conditions) by implementing a Transferable Domain Adaptation Network (TDAN) and TS2Vec for accelerating training
               - Quantified model performance, achieving 88.27% accuracy on the unseen target domain—a +40.6% absolute improvement over the baseline
+
+          - title: Full-Stack Autonomous Mobile Robot (MEAM 510)
+            badges:
+              - "ESP32-S3"
+              - "ESP-IDF"
+              - "EKF"
+              - "Circuit Design"
+              - "Embedded Dev"
+            links:
+              - icon: fab fa-youtube
+                url: https://youtu.be/hBenPNBlztI
+            content: |
+              Independently designed, developed, and deployed a complete autonomous robot based on ESP32-S3.
+
+              - Completed full vehicle circuit design and hardware assembly (soldering and wiring)
+              - Developed low-level software stack using ESP-IDF framework
+              - Successfully deployed Extended Kalman Filter (EKF) algorithm for high-precision localization, wireless navigation, and real-time line tracking
+
+          - title: Unix-like OS Core Components (CIS 548)
+            badges:
+              - "C"
+              - "POSIX"
+              - "Linux"
+              - "Systems Programming"
+            links:
+              - icon: fab fa-github
+                url: https://github.com/CIS548/26sp-cis5480-pennos-21
+            content: |
+              Built core OS components from scratch using C and POSIX APIs.
+
+              - Implemented custom Shell interpreter and dynamic memory allocator from scratch
+              - Mastered low-level process scheduling (Fork/Exec), multi-threaded concurrency management, and memory leak prevention
 
       # ==================== CONTACT SECTION ====================
       contact:
