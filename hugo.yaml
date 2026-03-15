@@ -47,7 +47,7 @@ languages:
         title: "Vincent Wang"
         subtitle: "Focused on AI Systems & Embodied Intelligence"
         content: "M.S. student in MEAM at UPenn, specializing in Mechatronics and Robotics. Passionate about VLA/VLM models, distributed training, and embodied AI. Experienced in building full-stack AI-robotics systems from GPU cluster training to real-world deployment."
-        image: /images/gemini.png
+        image: /images/me.jpg
         bottomImage:
           enable: true
         button:
@@ -247,6 +247,7 @@ languages:
               - Quantified model performance, achieving 88.27% accuracy on the unseen target domain—a +40.6% absolute improvement over the baseline
 
           - title: Full-Stack Autonomous Mobile Robot (MEAM 510)
+            image: /images/projects/meam510.jpg
             badges:
               - "ESP32-S3"
               - "ESP-IDF"
@@ -339,7 +340,7 @@ languages:
         title: "Vincent Wang (王泽森)"
         subtitle: "专注 AI 系统与具身智能"
         content: "宾夕法尼亚大学 (UPenn) MEAN 硕士在读，专注机电一体化与机器人。热衷于自主系统开发、ROS 架构及嵌入式控制。拥有从零构建高性能机器人系统的实战经验。"
-        image: /images/gemini.png
+        image: /images/me.jpg
         bottomImage:
           enable: true
         button:
@@ -539,6 +540,7 @@ languages:
               - 量化了模型性能，在未知目标领域实现了 88.27% 的准确率，较基准线绝对提升了 40.6%
 
           - title: 全栈自主移动机器人 (MEAM 510)
+            image: /images/projects/meam510.jpg
             badges:
               - “ESP32-S3”
               - “ESP-IDF”
