@@ -3,8 +3,491 @@ languageCode: "en-us"
 title: "Vincent Wang's Personal Website"
 theme: hugo-profile
 
-# 确保所有 URL 都使用 baseURL
+# Ensure all URLs use baseURL
 canonifyURLs: true
+
+languages:
+  en:
+    languageName: "English"
+    contentDir: "content/en"
+    weight: 1
+    params:
+      title: "Vincent Wang - Robotics Engineer"
+      description: "M.S. in Mechanical Engineering and Applied Mechanics at UPenn, specializing in Mechatronics and Robotics"
+      favicon: "/fav.png"
+      useBootstrapCDN: false
+      mathjax: false
+      animate: true
+      font:
+        fontSize: 1rem
+        fontWeight: 400
+        lineHeight: 1.5
+        textAlign: left
+
+      navbar:
+        align: ms-auto
+        brandName: "Hugo Profile"
+        disableSearch: false
+        stickyNavBar:
+          enable : true
+          showOnScrollUp : true
+        enableSeparator: false
+        menus:
+          disableAbout: false
+          disableExperience: false
+          disableEducation: false
+          disableProjects: false
+          disableAchievements: false
+          disableContact: false
+
+      # ==================== HERO SECTION ====================
+      hero:
+        enable: true
+        intro: "Hi, my name is"
+        title: "Vincent Wang"
+        subtitle: "Robotics Engineer & Control Systems Specialist"
+        content: "M.S. student in MEAN at UPenn, specializing in Mechatronics and Robotics. Passionate about autonomous systems, ROS development, and embedded control. Experienced in building high-performance robotic systems from scratch."
+        image: /images/gemini.png
+        bottomImage:
+          enable: true
+        button:
+          enable: true
+          name: "Download Resume"
+          url: "/VincentWangCV.docx"
+          download: true
+          newPage: false
+        socialLinks:
+          fontAwesomeIcons:
+            - icon: fab fa-linkedin
+              url: https://www.linkedin.com/in/sansenpai
+            - icon: fab fa-github
+              url: https://github.com/oldkingzz
+            - icon: fas fa-envelope
+              url: mailto:Wang2003@seas.upenn.edu
+
+      # ==================== ABOUT SECTION ====================
+      about:
+        enable: true
+        title: "About Me"
+        image: "/images/me.jpg"
+        content: |-
+          I am a graduate student at the University of Pennsylvania pursuing an M.S. in Mechanical Engineering and Applied Mechanics with a concentration in Mechatronics and Robotics.
+
+          My passion lies in building intelligent robotic systems that bridge the gap between theoretical control algorithms and real-world applications. I have hands-on experience in ROS system architecture, embedded control, and autonomous navigation.
+
+          As the founder and control leader of my university's Robocon team, I led 20 interdisciplinary members to develop a complete autonomous system from scratch, achieving high-precision SLAM navigation and real-time object detection.
+        skills:
+          enable: true
+          title: "Technical Skills & Tools:"
+          items:
+            - "ROS2 & Navigation Stack"
+            - "C++ / Python / Rust"
+            - "MATLAB & Simulink"
+            - "Embedded Systems (STM32)"
+            - "Computer Vision (YOLO, OpenCV)"
+            - "Linux & Git/CMake"
+            - "CAD (Fusion360, Creo)"
+            - "Control Theory & SLAM"
+
+      # ==================== EXPERIENCE SECTION ====================
+      experience:
+        enable: true
+        title: "Work Experience"
+        items:
+          - company: "Shanghai Uji Technology ."
+            jobs:
+              - name: "Robotics Control Intern"
+                date: "Jul 2024 - Sep 2024"
+                content: |
+                  Developed a high-fidelity teleoperation system for multi-axis manipulators with advanced control algorithms.
+
+                  - Designed and simulated teleoperation system in MATLAB/Simulink with motor FOC algorithms
+                  - Resolved critical instability by re-architecting from impedance to admittance control model
+                  - Integrated torque sensor feedback to achieve stable, high-sensitivity force replication
+                  - Developed C++ host-computer application for robust CAN bus communication with ~30 motors
+                featuredItems:
+                  fontAwesomeIcons:
+                    - icon: fas fa-robot
+                      tooltip: Robotics Control
+                    - icon: fas fa-microchip
+                      tooltip: Embedded Systems
+
+          - company: "Tennis.ai"
+            jobs:
+              - name: "Data Analyst"
+                date: "Sep 2022 - Sep 2023"
+                content: |
+                  Optimized AI models for tennis video analysis, progressing from prompt engineering to computer vision.
+
+                  - Optimized GPT-4 text generation using advanced prompt engineering techniques
+                  - Executed meticulous data annotation for tennis video analysis datasets
+                  - Fine-tuned YOLOv8 model with Python, achieving 10% performance boost in object detection
+                featuredItems:
+                  fontAwesomeIcons:
+                    - icon: fab fa-python
+                      tooltip: Python
+                    - icon: fas fa-brain
+                      tooltip: Machine Learning
+
+      # ==================== EDUCATION SECTION ====================
+      education:
+        enable: true
+        title: "Education"
+        index: false
+        items:
+          - title: "M.S. in Mechanical Engineering and Applied Mechanics"
+            school:
+              name: "University of Pennsylvania"
+              url: "https://www.seas.upenn.edu/"
+            date: "Sep 2025 - Present"
+            GPA: "In Progress"
+            content: |-
+              **Concentration:** Mechatronics and Robotics
+
+              **Relevant Courses:**
+              - Advanced Dynamics
+              - Design of Mechatronics Systems
+              - Foundations of Engineering Mathematics
+
+          - title: "Bachelor of Intelligent Manufacturing Engineering"
+            school:
+              name: "East China University of Science and Technology"
+              url: "https://www.ecust.edu.cn"
+            date: "Sep 2021 - Jun 2025"
+            GPA: "Ranking: TOP 15%"
+            content: |-
+              **Achievements:**
+              - Co-founder and control leader of ECUST Robocon Team
+              - Published first-author paper in IEEE MEAE 2024
+
+
+              **Key Projects:**
+              - Autonomous robot system with SLAM and computer vision on nuc system
+              - STM32-based embedded control system
+              - Developed an AI-driven Mechanical Damage Detection Model
+
+      # ==================== ACHIEVEMENTS SECTION ====================
+      achievements:
+        enable: true
+        title: "Publications & Achievements"
+        items:
+          - title: IEEE MEAE 2024 Publication
+            content: "First author of 'MDATS—A Multi-Domain Adaptive Classification Strategy for Mechanical Fault Detection'"
+            url: "https://ieeexplore.ieee.org/document/11026598"
+          - title: Robocon Team Founder
+            content: Co-founded university robotics competition team and led 20+ interdisciplinary members to develop autonomous systems
+          - title: Mechanical Innovation Competition
+            content: Won award in Intelligent Manufacturing Track for industrial automation project
+
+      # ==================== PROJECTS SECTION ====================
+      projects:
+        enable: true
+        title: "Projects"
+        items:
+          - title: Robocon Autonomous Robot System
+            image: /images/projects/robocon.png
+            featured:
+              name: "Team Leader"
+              link: "#"
+            badges:
+              - "ROS2"
+              - "SLAM"
+              - "Computer Vision"
+              - "STM32"
+              - "C++"
+              - "Python"
+            links:
+              - icon: fab fa-github
+                url: https://github.com/oldkingzz/ECUST-robocon
+            content: |
+              Founded and led the development of a complete autonomous robot system from scratch as Control Leader of the Robocon team.
+
+              **Role:** Founder & Control Leader (Sep 2022 - Present)
+
+              - Architected autonomous system with Point-LIO SLAM (< 0.003m drift/3min)
+              - Implemented YOLO pipeline for 20 FPS real-time object detection on embedded NUC
+              - Developed STM32-based control system with PID and Mecanum wheel kinematics
+              - Led 20 interdisciplinary members and trained 60+ new members
+
+          - title: Multi-Domain Adaptive Fault Detection (IEEE Publication)
+            image: /images/projects/MEAE.png
+            badges:
+              - "Deep Learning"
+              - "Python"
+              - "PyTorch"
+              - "Signal Processing"
+            links:
+              - icon: fas fa-file-pdf
+                url: "https://ieeexplore.ieee.org/document/11026598"
+            content: |
+              Developed a novel deep learning strategy for mechanical fault detection across different operating conditions.
+
+              **Publication:** IEEE MEAE 2024 (First Author)
+
+              - Architected an end-to-end deep learning pipeline in PyTorch with CNN/TCN and transformer to diagnose mechanical faults from time-series sensor data
+              - Solved the critical "domain shift" problem (varying operating conditions) by implementing a Transferable Domain Adaptation Network (TDAN) and TS2Vec for accelerating training
+              - Quantified model performance, achieving 88.27% accuracy on the unseen target domain—a +40.6% absolute improvement over the baseline
+
+      # ==================== CONTACT SECTION ====================
+      contact:
+        enable: true
+        title: "Get In Touch"
+        content: I'm currently seeking internship opportunities in robotics and control systems. Whether you have a question about my projects or want to discuss potential collaborations, feel free to reach out!
+        btnName: Email Me
+        btnLink: mailto:Wang2003@seas.upenn.edu
+
+      # ==================== FOOTER SECTION ====================
+      footer:
+        recentPosts:
+          path: "blogs"
+          count: 3
+          title: Recent Posts
+          enable: false
+          disableFeaturedImage: false
+        socialNetworks:
+          github: https://github.com/oldkingzz
+          linkedin: https://www.linkedin.com/in/sansenpai
+
+  zh:
+    languageName: "中文"
+    contentDir: "content/zh"
+    weight: 2
+    params:
+      title: "Vincent Wang - 机器人工程师"
+      description: "宾夕法尼亚大学机械工程硕士，专注机电一体化与机器人"
+      favicon: "/fav.png"
+      useBootstrapCDN: false
+      mathjax: false
+      animate: true
+      font:
+        fontSize: 1rem
+        fontWeight: 400
+        lineHeight: 1.5
+        textAlign: left
+
+      navbar:
+        align: ms-auto
+        brandName: "Hugo Profile"
+        disableSearch: false
+        stickyNavBar:
+          enable : true
+          showOnScrollUp : true
+        enableSeparator: false
+        menus:
+          disableAbout: false
+          disableExperience: false
+          disableEducation: false
+          disableProjects: false
+          disableAchievements: false
+          disableContact: false
+
+      # ==================== HERO SECTION ====================
+      hero:
+        enable: true
+        intro: "你好，我是"
+        title: "Vincent Wang (王泽森)"
+        subtitle: "机器人工程师 & 控制系统专家"
+        content: "宾夕法尼亚大学 (UPenn) MEAN 硕士在读，专注机电一体化与机器人。热衷于自主系统开发、ROS 架构及嵌入式控制。拥有从零构建高性能机器人系统的实战经验。"
+        image: /images/gemini.png
+        bottomImage:
+          enable: true
+        button:
+          enable: true
+          name: "下载简历"
+          url: "/VincentWangCV.docx"
+          download: true
+          newPage: false
+        socialLinks:
+          fontAwesomeIcons:
+            - icon: fab fa-linkedin
+              url: https://www.linkedin.com/in/sansenpai
+            - icon: fab fa-github
+              url: https://github.com/oldkingzz
+            - icon: fas fa-envelope
+              url: mailto:Wang2003@seas.upenn.edu
+
+      # ==================== ABOUT SECTION ====================
+      about:
+        enable: true
+        title: "关于我"
+        image: "/images/me.jpg"
+        content: |-
+          我目前是宾夕法尼亚大学 (University of Pennsylvania) 的硕士研究生，攻读机械工程与应用力学 (MEAN)，方向为机电一体化与机器人。
+
+          我致力于构建能够弥合理论控制算法与现实应用之间鸿沟的智能化机器人系统。我在 ROS 系统架构、嵌入式控制和自主导航方面拥有丰富的实践经验。
+
+          作为华东理工大学 Robocon 战队的创始人和控制组组长，我曾带领 20 名跨学科成员从零开发出一套完整的自主机器人系统，实现了高精度的 SLAM 导航和实时目标检测。
+        skills:
+          enable: true
+          title: "技术栈与工具："
+          items:
+            - "ROS2 & Navigation Stack"
+            - "C++ / Python / Rust"
+            - "MATLAB & Simulink"
+            - "嵌入式系统 (STM32)"
+            - "计算机视觉 (YOLO, OpenCV)"
+            - "Linux & Git/CMake"
+            - "CAD (Fusion360, Creo)"
+            - "控制理论 & SLAM"
+
+      # ==================== EXPERIENCE SECTION ====================
+      experience:
+        enable: true
+        title: "工作经验"
+        items:
+          - company: "上海宇集科技 (Shanghai Uji Technology)"
+            jobs:
+              - name: "机器人控制实习生"
+                date: "2024年7月 - 2024年9月"
+                content: |
+                  为多轴机械臂开发了高保真远端操作（Teleoperation）系统及先进控制算法。
+
+                  - 在 MATLAB/Simulink 中设计并仿真了基于电机 FOC 算法的远操系统
+                  - 通过将阻抗控制（Impedance）重构为导纳控制（Admittance）模型，解决了关键的不稳定性问题
+                  - 集成力矩传感器反馈，实现了稳定且高灵敏度的力反馈复制
+                  - 开发了 C++ 上位机程序，通过 CAN 总线实现与约 30 台电机的稳定通信
+                featuredItems:
+                  fontAwesomeIcons:
+                    - icon: fas fa-robot
+                      tooltip: 机器人控制
+                    - icon: fas fa-microchip
+                      tooltip: 嵌入式系统
+
+          - company: "Tennis.ai"
+            jobs:
+              - name: "数据分析师"
+                date: "2022年9月 - 2023年9月"
+                content: |
+                  优化了用于网球视频分析的 AI 模型，涵盖从提示工程（Prompt Engineering）到计算机视觉的应用。
+
+                  - 使用提示工程技术优化了 GPT-4 的文本生成质量
+                  - 负责网球视频分析数据集的精细化标注
+                  - 使用 Python 微调 YOLOv8 模型，使目标检测性能提升了 10%
+                featuredItems:
+                  fontAwesomeIcons:
+                    - icon: fab fa-python
+                      tooltip: Python
+                    - icon: fas fa-brain
+                      tooltip: 机器学习
+
+      # ==================== EDUCATION SECTION ====================
+      education:
+        enable: true
+        title: "教育背景"
+        index: false
+        items:
+          - title: "机械工程与应用力学硕士"
+            school:
+              name: "宾夕法尼亚大学 (UPenn)"
+              url: "https://www.seas.upenn.edu/"
+            date: "2025年9月 - 至今"
+            GPA: "进行中"
+            content: |-
+              **专业方向：** 机电一体化与机器人
+
+              **核心课程：**
+              - 高级动力学 (Advanced Dynamics)
+              - 机电系统设计 (Design of Mechatronics Systems)
+              - 工程数学基础 (Foundations of Engineering Mathematics)
+
+          - title: "智能制造工程学士"
+            school:
+              name: "华东理工大学 (ECUST)"
+              url: "https://www.ecust.edu.cn"
+            date: "2021年9月 - 2025年6月"
+            GPA: "排名：前 15%"
+            content: |-
+              **主要成就：**
+              - 华东理工大学 Robocon 战队联合创始人及控制组组长
+              - 以第一作者身份在 IEEE MEAE 2024 发表论文
+
+
+              **重点项目：**
+              - 基于 NUC 的 SLAM 与视觉自主机器人系统
+              - 基于 STM32 的嵌入式控制系统
+              - 开发了基于 AI 的机械损伤检测模型
+
+      # ==================== ACHIEVEMENTS SECTION ====================
+      achievements:
+        enable: true
+        title: "荣誉与发表"
+        items:
+          - title: IEEE MEAE 2024 论文发表
+            content: "第一作者发表论文：'MDATS—A Multi-Domain Adaptive Classification Strategy for Mechanical Fault Detection'"
+            url: "https://ieeexplore.ieee.org/document/11026598"
+          - title: Robocon 战队创始人
+            content: 联合组建校级机器人竞赛队伍，带领 20 余名跨学科成员开发自主系统
+          - title: 机械创新设计大赛
+            content: 在智能制造赛道凭借工业自动化项目获奖
+
+      # ==================== PROJECTS SECTION ====================
+      projects:
+        enable: true
+        title: "项目展示"
+        items:
+          - title: Robocon 自主机器人系统
+            image: /images/projects/robocon.png
+            featured:
+              name: "项目负责人"
+              link: "#"
+            badges:
+              - "ROS2"
+              - "SLAM"
+              - "计算机视觉"
+              - "STM32"
+              - "C++"
+              - "Python"
+            links:
+              - icon: fab fa-github
+                url: https://github.com/oldkingzz/ECUST-robocon
+            content: |
+              作为 Robocon 战队的控制组组长，从零开始领导开发了一套完整的自主机器人系统。
+
+              **角色：** 创始人 & 控制组组长 (2022年9月 - 至今)
+
+              - 架构了基于 Point-LIO 的 SLAM 自主系统（3分钟漂移 < 0.003m）
+              - 在嵌入式 NUC 上实现了 YOLO 流线，达到 20 FPS 的实时目标检测
+              - 开发了基于 STM32 的控制系统，涵盖 PID 控制与麦克纳姆轮运动学分析
+              - 领导 20 名跨学科成员，并累计培训了 60 余名新成员
+
+          - title: 多领域自适应故障检测 (IEEE 论文)
+            image: /images/projects/MEAE.png
+            badges:
+              - "深度学习"
+              - "Python"
+              - "PyTorch"
+              - "信号处理"
+            links:
+              - icon: fas fa-file-pdf
+                url: "https://ieeexplore.ieee.org/document/11026598"
+            content: |
+              开发了一种新型深度学习策略，用于不同工况下的机械故障检测。
+
+              **发表：** IEEE MEAE 2024 (第一作者)
+
+              - 使用 PyTorch 架构了端到端的深度学习管线（CNN/TCN + Transformer），从时间序列传感器数据中诊断机械故障
+              - 通过引入可迁移领域自适应网络 (TDAN) 和 TS2Vec，解决了关键的“领域偏移”问题（适应不断变化的运行工况）
+              - 量化了模型性能，在未知目标领域实现了 88.27% 的准确率，较基准线绝对提升了 40.6%
+
+      # ==================== CONTACT SECTION ====================
+      contact:
+        enable: true
+        title: "联系我"
+        content: 我目前正在寻找机器人和控制系统方向的实习机会。如果你对我的项目有任何疑问，或想探讨合作，欢迎随时联系！
+        btnName: 发送邮件
+        btnLink: mailto:Wang2003@seas.upenn.edu
+
+      # ==================== FOOTER SECTION ====================
+      footer:
+        recentPosts:
+          path: "blogs"
+          count: 3
+          title: 最近文章
+          enable: false
+          disableFeaturedImage: false
+        socialNetworks:
+          github: https://github.com/oldkingzz
+          linkedin: https://www.linkedin.com/in/sansenpai
 
 outputs:
   home:
@@ -16,12 +499,6 @@ outputs:
     - "RSS"
 
 enableRobotsTXT: true
-
-#services:
-  #googleAnalytics:
-    #id: G-MEASUREMENT_ID
-  #disqus:
-    #shortname: your-disqus-shortname
 
 pagination:
   pagerSize: 3
@@ -43,353 +520,3 @@ Menus:
       title: Blog posts
       url: /gallery
       weight: 2
-    #Dropdown menu
-    # - identifier: dropdown
-    #   title: Example dropdown menu
-    #   name: Dropdown
-    #   weight: 3
-    # - identifier: dropdown1
-    #   title: example dropdown 1
-    #   name: example 1
-    #   url: /#
-    #   parent: dropdown
-    #   weight: 1
-    # - identifier: dropdown2
-    #   title: example dropdown 2
-    #   name: example 2
-    #   url: /#
-    #   parent: dropdown
-    #   weight: 2
-
-params:
-  title: "Vincent Wang - Robotics Engineer"
-  description: "M.S. in Mechanical Engineering and Applied Mechanics at UPenn, specializing in Mechatronics and Robotics"
-  # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
-
-  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
-  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
-  # Note the lack of "" in true, it should be of boolean type.
-  useBootstrapCDN: false
-
-  # If you want to load dynamically responsive images from Cloudinary
-  # This requires your images to be uploaded + hosted on Cloudinary
-  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
-  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
-
-  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
-  mathjax: false
-
-  # Whether the fade animations on the home page will be enabled
-  animate: true
-
-  theme:
-    # disableThemeToggle: true
-    # defaultTheme: "light" # dark
-
-  font:
-    fontSize: 1rem # default: 1rem
-    fontWeight: 400 # default: 400
-    lineHeight: 1.5 # default: 1.5
-    textAlign: left # default: left
-
-  # color preference
-  # When using hex codes for colors, quotations must be used along with the # sign
-  # color:
-  #   textColor: "#343a40"
-  #   secondaryTextColor: "#6c757d"
-  #   textLinkColor: "#007bff"
-  #   backgroundColor: "#eaedf0"
-  #   secondaryBackgroundColor: "#64ffda1a"
-  #   primaryColor: "#007bff"
-  #   secondaryColor: "#f8f9fa"
-
-  #   darkmode:
-  #     textColor: "#e4e6eb"
-  #     secondaryTextColor: "#b0b3b8"
-  #     textLinkColor: "#ffffff"
-  #     backgroundColor: "#18191a"
-  #     secondaryBackgroundColor: "#212529"
-  #     primaryColor: "#ffffff"
-  #     secondaryColor: "#212529"
-
-  # If you want to customize the menu, you can change it here
-  navbar:
-    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
-    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
-    # showBrandLogo: false # Show brand logo in nav bar | default is true
-    brandName: "Hugo Profile" # Brand name for the brand | default is the title variable
-    disableSearch: false
-    # searchPlaceholder: "Search"
-    stickyNavBar:
-      enable : true
-      showOnScrollUp : true
-    enableSeparator: false
-    menus:
-      disableAbout: false
-      disableExperience: false
-      disableEducation: false
-      disableProjects: false
-      disableAchievements: false
-      disableContact: false
-
-
-  # ==================== HERO SECTION ====================
-  # This is the first section visitors see
-  hero:
-    enable: true
-    intro: "Hi, my name is"
-    title: "Vincent Wang"
-    subtitle: "Robotics Engineer & Control Systems Specialist"
-    content: "M.S. student in MEAN at UPenn, specializing in Mechatronics and Robotics. Passionate about autonomous systems, ROS development, and embedded control. Experienced in building high-performance robotic systems from scratch."
-    image: /images/gemini.png
-    bottomImage:
-      enable: true
-    # roundImage: true # Make hero image circular | default false
-    button:
-      enable: true
-      name: "Download Resume"
-      url: "/VincentWangCV.docx"  # 将你的简历 PDF 放在 static/resume.pdf
-      download: true
-      newPage: false
-    socialLinks:
-      fontAwesomeIcons:
-        - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/sansenpai
-        - icon: fab fa-github
-          url: https://github.com/oldkingzz  # 替换为你的 GitHub 用户名
-        - icon: fas fa-envelope
-          url: mailto:Wang2003@seas.upenn.edu
-
-  # ==================== ABOUT SECTION ====================
-  # Brief introduction and skills
-  about:
-    enable: true
-    title: "About Me"
-    image: "/images/me.jpg"  # 将你的头像放在 static/images/me.png
-    content: |-
-      I am a graduate student at the University of Pennsylvania pursuing an M.S. in Mechanical Engineering and Applied Mechanics with a concentration in Mechatronics and Robotics.
-
-      My passion lies in building intelligent robotic systems that bridge the gap between theoretical control algorithms and real-world applications. I have hands-on experience in ROS system architecture, embedded control, and autonomous navigation.
-
-      As the founder and control leader of my university's Robocon team, I led 20 interdisciplinary members to develop a complete autonomous system from scratch, achieving high-precision SLAM navigation and real-time object detection.
-    skills:
-      enable: true
-      title: "Technical Skills & Tools:"
-      items:
-        - "ROS2 & Navigation Stack"
-        - "C++ / Python / Rust"
-        - "MATLAB & Simulink"
-        - "Embedded Systems (STM32)"
-        - "Computer Vision (YOLO, OpenCV)"
-        - "Linux & Git/CMake"
-        - "CAD (Fusion360, Creo)"
-        - "Control Theory & SLAM"
-
-  # ==================== EXPERIENCE SECTION ====================
-  # Work experience in reverse chronological order
-  experience:
-    enable: true
-    title: "Work Experience"
-    items:
-      - company: "Shanghai Uji Technology ."
-        #companyUrl: "https://www.ujibot.com"  # 如果有公司网站，替换这里
-        jobs:
-          - name: "Robotics Control Intern"
-            date: "Jul 2024 - Sep 2024"
-            content: |
-              Developed a high-fidelity teleoperation system for multi-axis manipulators with advanced control algorithms.
-
-              - Designed and simulated teleoperation system in MATLAB/Simulink with motor FOC algorithms
-              - Resolved critical instability by re-architecting from impedance to admittance control model
-              - Integrated torque sensor feedback to achieve stable, high-sensitivity force replication
-              - Developed C++ host-computer application for robust CAN bus communication with ~30 motors
-            featuredItems:
-              fontAwesomeIcons:
-                - icon: fas fa-robot
-                  tooltip: Robotics Control
-                - icon: fas fa-microchip
-                  tooltip: Embedded Systems
-
-      - company: "Tennis.ai"
-        #companyUrl: "#"
-        jobs:
-          - name: "Data Analyst"
-            date: "Sep 2022 - Sep 2023"
-            content: |
-              Optimized AI models for tennis video analysis, progressing from prompt engineering to computer vision.
-
-              - Optimized GPT-4 text generation using advanced prompt engineering techniques
-              - Executed meticulous data annotation for tennis video analysis datasets
-              - Fine-tuned YOLOv8 model with Python, achieving 10% performance boost in object detection
-            featuredItems:
-              fontAwesomeIcons:
-                - icon: fab fa-python
-                  tooltip: Python
-                - icon: fas fa-brain
-                  tooltip: Machine Learning
-
-  # ==================== EDUCATION SECTION ====================
-  # Academic background in reverse chronological order
-  education:
-    enable: true
-    title: "Education"
-    index: false
-    items:
-      - title: "M.S. in Mechanical Engineering and Applied Mechanics"
-        school:
-          name: "University of Pennsylvania"
-          url: "https://www.seas.upenn.edu/"
-        date: "Sep 2025 - Present"
-        GPA: "In Progress"
-        content: |-
-          **Concentration:** Mechatronics and Robotics
-
-          **Relevant Courses:**
-          - Advanced Dynamics
-          - Design of Mechatronics Systems
-          - Foundations of Engineering Mathematics
-
-      - title: "Bachelor of Intelligent Manufacturing Engineering"
-        school:
-          name: "East China University of Science and Technology"
-          url: "https://www.ecust.edu.cn"
-        date: "Sep 2021 - Jun 2025"
-        GPA: "Ranking: TOP 15%"
-        content: |-
-          **Achievements:**
-          - Co-founder and control leader of ECUST Robocon Team
-          - Published first-author paper in IEEE MEAE 2024
-
-
-          **Key Projects:**
-          - Autonomous robot system with SLAM and computer vision on nuc system
-          - STM32-based embedded control system
-          - Developed an AI-driven Mechanical Damage Detection Model
-
-  # ==================== ACHIEVEMENTS SECTION ====================
-  # Publications, awards, and notable accomplishments
-  achievements:
-    enable: true
-    title: "Publications & Achievements"
-    items:
-      - title: IEEE MEAE 2024 Publication
-        content: "First author of 'MDATS—A Multi-Domain Adaptive Classification Strategy for Mechanical Fault Detection'"
-        url: "https://ieeexplore.ieee.org/document/11026598"
-        # image: /images/achievements/ieee-paper.jpg  # 添加图片后取消注释
-      - title: Robocon Team Founder
-        content: Co-founded university robotics competition team and led 20+ interdisciplinary members to develop autonomous systems
-        # image: /images/achievements/robocon.jpg  # 添加图片后取消注释
-      - title: Mechanical Innovation Competition
-        content: Won award in Intelligent Manufacturing Track for industrial automation project
-        # image: /images/achievements/competition.jpg  # 添加图片后取消注释
-
-  # ==================== PROJECTS SECTION ====================
-  # Major projects showcasing technical skills
-  projects:
-    enable: true
-    title: "Projects"
-    items:
-      - title: Robocon Autonomous Robot System
-        image: /images/projects/robocon.png
-        featured:
-          name: "Team Leader"
-          link: "#"
-        badges:
-          - "ROS2"
-          - "SLAM"
-          - "Computer Vision"
-          - "STM32"
-          - "C++"
-          - "Python"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/oldkingzz/ECUST-robocon
-        content: |
-          Founded and led the development of a complete autonomous robot system from scratch as Control Leader of the Robocon team.
-
-          **Role:** Founder & Control Leader (Sep 2022 - Present)
-
-          - Architected autonomous system with Point-LIO SLAM (< 0.003m drift/3min)
-          - Implemented YOLO pipeline for 20 FPS real-time object detection on embedded NUC
-          - Developed STM32-based control system with PID and Mecanum wheel kinematics
-          - Led 20 interdisciplinary members and trained 60+ new members
-
-      - title: Multi-Domain Adaptive Fault Detection (IEEE Publication)
-        image: /images/projects/MEAE.png  # 添加图片后取消注释
-        badges:
-          - "Deep Learning"
-          - "Python"
-          - "PyTorch"
-          - "Signal Processing"
-        links:
-          - icon: fas fa-file-pdf
-            url: "https://ieeexplore.ieee.org/document/11026598"
-        content: |
-          Developed a novel deep learning strategy for mechanical fault detection across different operating conditions.
-
-          **Publication:** IEEE MEAE 2024 (First Author)
-
-          - Architected an end-to-end deep learning pipeline in PyTorch with CNN/TCN and transformer to diagnose mechanical faults from time-series sensor data
-          - Solved the critical "domain shift" problem (varying operating conditions) by implementing a Transferable Domain Adaptation Network (TDAN) and TS2Vec for accelerating training
-          - Quantified model performance, achieving 88.27% accuracy on the unseen target domain—a +40.6% absolute improvement over the baseline
-
-  # ==================== CONTACT SECTION ====================
-  contact:
-    enable: true
-    title: "Get In Touch"
-    content: I'm currently seeking internship opportunities in robotics and control systems. Whether you have a question about my projects or want to discuss potential collaborations, feel free to reach out!
-    btnName: Email Me
-    btnLink: mailto:Wang2003@seas.upenn.edu
-    # formspree:
-    #   enable: true # `contact.email` value will be ignored
-    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
-    #   emailCaption: "Enter your email address"
-    #   messageCaption: "Enter your message here"
-    #   messageRows: 5
-
-  # ==================== FOOTER SECTION ====================
-  footer:
-    recentPosts:
-      path: "blogs"
-      count: 3
-      title: Recent Posts
-      enable: false  # 如果不写博客，设为 false
-      disableFeaturedImage: false
-    socialNetworks:
-      github: https://github.com/oldkingzz
-      linkedin: https://www.linkedin.com/in/sansenpai
-      #twitter: https://twitter.com
-      #instagram: https://instagram.com
-      #facebook: https://facebook.com
-
-  # List pages like blogs and posts
-  listPages:
-    disableFeaturedImage: false
-
-  # Single pages like blog and post
-  singlePages:
-    socialShare: true
-    readTime:
-      enable: true
-      content: "min read"
-    scrollprogress:
-      enable: true
-    tags:
-      openInNewTab: true
-
-  # For translations
-  terms:
-    read: "Read"
-    toc: "Table Of Contents"
-    copyright: "All rights reserved"
-    pageNotFound: "Page not found"
-    emailText: "Check out this site"
-
-  datesFormat:
-    article: "Jan 2, 2006"
-    articleList: "Jan 2, 2006"
-    articleRecent: "Jan 2, 2006"
-
-  #customScripts: -| # You can add custom scripts which will be added before </body> tag
-  #  <script type="text/javascript"><!-- any script here --></script>
