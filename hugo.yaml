@@ -11,6 +11,18 @@ languages:
     languageName: "English"
     contentDir: "content/en"
     weight: 1
+    menu:
+      main:
+        - identifier: blog
+          name: Blog
+          title: Blog posts
+          url: /blogs
+          weight: 1
+        - identifier: gallery
+          name: Gallery
+          title: Gallery
+          url: /gallery
+          weight: 2
     params:
       title: "Vincent Wang - Robotics Engineer"
       description: "M.S. in Mechanical Engineering and Applied Mechanics at UPenn, specializing in Mechatronics and Robotics"
@@ -304,6 +316,18 @@ languages:
     languageName: "中文"
     contentDir: "content/zh"
     weight: 2
+    menu:
+      main:
+        - identifier: blog
+          name: 博客
+          title: 博客文章
+          url: /blogs
+          weight: 1
+        - identifier: gallery
+          name: 相册
+          title: 相册
+          url: /gallery
+          weight: 2
     params:
       title: "Vincent Wang - 机器人工程师"
       description: "宾夕法尼亚大学机械工程硕士，专注机电一体化与机器人"
@@ -612,15 +636,3 @@ markup:
     renderer:
       unsafe: true
 
-Menus:
-  main:
-    - identifier: blog
-      name: Blog
-      title: Blog posts
-      url: /blogs
-      weight: 1
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
-      weight: 2
