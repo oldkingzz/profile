@@ -125,7 +125,7 @@ export default function Home() {
           <div className="career-links">
             <a href="https://github.com/oldkingzz" target="_blank" rel="noreferrer">GitHub ↗</a>
             <a href="https://www.linkedin.com/in/sansenpai/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="mailto:Wang2003@seas.upenn.edu">Email ↗</a>
+            <a href="mailto:wang2003@engineering.upenn.edu">Email ↗</a>
           </div>
         </div>
         <div className="portrait-wrap">
@@ -182,7 +182,7 @@ export default function Home() {
         <p className="section-kicker">CONTACT</p>
         <h2>{text.contactTitle}</h2>
         <p>{text.contactBody}</p>
-        <a href="mailto:Wang2003@seas.upenn.edu">Wang2003@seas.upenn.edu <span>↗</span></a>
+        <a href="mailto:wang2003@engineering.upenn.edu">wang2003@engineering.upenn.edu <span>↗</span></a>
       </section>
 
       <SiteFooter />

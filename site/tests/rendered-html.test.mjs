@@ -33,6 +33,8 @@ test("renders English as the default portfolio language", async () => {
   assert.match(html, /Stages &amp; Projects/);
   assert.match(html, /Robocon Autonomous Robot System/);
   assert.match(html, /Switch to Chinese/);
+  assert.match(html, /mailto:wang2003@engineering\.upenn\.edu/);
+  assert.doesNotMatch(html, /Wang2003@seas\.upenn\.edu/i);
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/sansenpai\//);
   assert.doesNotMatch(html, /招聘者先看到|赛索德|Synthoid|\bFOC\b/);
 });

@@ -52,7 +52,7 @@ export function SiteFooter() {
         <a href="https://github.com/oldkingzz" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/sansenpai/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://raw.githubusercontent.com/oldkingzz/profile/main/static/VincentWangCV.docx" target="_blank" rel="noreferrer">CV</a>
-        <a href="mailto:Wang2003@seas.upenn.edu">Wang2003@seas.upenn.edu</a>
+        <a href="mailto:wang2003@engineering.upenn.edu">wang2003@engineering.upenn.edu</a>
       </div>
     </footer>
   );
