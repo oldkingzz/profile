@@ -13,12 +13,13 @@ import {
   ownershipLabels,
   systemLayers,
 } from "./atlas-data";
+import { localize, type Language, useLanguage } from "./language";
 import { withBasePath } from "./paths";
 
-function evidenceSource(url: string) {
-  if (url.includes("github.com")) return { icon: withBasePath("/icons/github.svg"), label: "在 GitHub 查看公开项目" };
-  if (url.includes("arxiv.org")) return { icon: withBasePath("/icons/arxiv.svg"), label: "在 arXiv 查看论文" };
-  return { icon: withBasePath("/icons/doi.svg"), label: "通过 DOI 查看论文" };
+function evidenceSource(url: string, language: Language) {
+  if (url.includes("github.com")) return { icon: withBasePath("/icons/github.svg"), label: language === "en" ? "View public project on GitHub" : "在 GitHub 查看公开项目" };
+  if (url.includes("arxiv.org")) return { icon: withBasePath("/icons/arxiv.svg"), label: language === "en" ? "View paper on arXiv" : "在 arXiv 查看论文" };
+  return { icon: withBasePath("/icons/doi.svg"), label: language === "en" ? "Open paper via DOI" : "通过 DOI 查看论文" };
 }
 
 const allNodes = [
@@ -39,11 +40,12 @@ function hasProjectMapping(skillId: string) {
 type SkillNodeProps = {
   node: AtlasNode;
   projectId: AtlasProjectId;
+  language: Language;
   selectedTech: string | null;
   onSelectTech: (skillId: string) => void;
 };
 
-function SkillNode({ node, projectId, selectedTech, onSelectTech }: SkillNodeProps) {
+function SkillNode({ node, projectId, language, selectedTech, onSelectTech }: SkillNodeProps) {
   const project = findAtlasProject(projectId);
   const related = Boolean(project.skills[node.id]);
   const filterable = hasProjectMapping(node.id) && !node.alwaysOn;
@@ -58,7 +60,7 @@ function SkillNode({ node, projectId, selectedTech, onSelectTech }: SkillNodePro
   const content = (
     <>
       <span className="atlas-capability-name">{node.label}</span>
-      <span className={`atlas-level level-${level}`}>{ownershipLabels[level]}</span>
+      <span className={`atlas-level level-${level}`}>{ownershipLabels[language][level]}</span>
     </>
   );
 
@@ -96,9 +98,9 @@ function SkillNode({ node, projectId, selectedTech, onSelectTech }: SkillNodePro
       ) : null}
 
       {node.evidenceLinks?.length ? (
-        <div className="atlas-node-evidence" aria-label="Agent-native Engineering 的公开证据">
+        <div className="atlas-node-evidence" aria-label={language === "en" ? "Public evidence for Agent-native Engineering" : "Agent-native Engineering 的公开证据"}>
           {node.evidenceLinks.map((link) => (
-            <a key={link.href} href={link.href} target="_blank" rel="noreferrer" title={link.label} aria-label={`在 GitHub 查看 ${link.label}`}>
+            <a key={link.href} href={link.href} target="_blank" rel="noreferrer" title={link.label} aria-label={language === "en" ? `View ${link.label} on GitHub` : `在 GitHub 查看 ${link.label}`}>
               <img src={withBasePath("/icons/github.svg")} alt="" />
             </a>
           ))}
@@ -109,6 +111,7 @@ function SkillNode({ node, projectId, selectedTech, onSelectTech }: SkillNodePro
 }
 
 export function InlineProjectAtlas() {
+  const { language } = useLanguage();
   const [selectedId, setSelectedId] = useState<AtlasProjectId>("robocon");
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const selected = useMemo(() => findAtlasProject(selectedId), [selectedId]);
@@ -137,21 +140,21 @@ export function InlineProjectAtlas() {
     setSelectedId(firstMatch.id);
   };
 
-  const source = selected.link ? evidenceSource(selected.link) : null;
+  const source = selected.link ? evidenceSource(selected.link, language) : null;
 
   return (
     <section className="home-atlas" id="project-atlas">
       <div className="section-shell">
-        <header className="home-atlas-heading"><h2>项目与技术栈</h2></header>
+        <header className="home-atlas-heading"><h2>{language === "en" ? "Projects & Technology Stack" : "项目与技术栈"}</h2></header>
 
         <div className="atlas-layout">
           <aside className="atlas-projects">
-            <div className="atlas-rail-title"><strong>阶段与项目</strong></div>
-            <nav aria-label="选择项目">
+            <div className="atlas-rail-title"><strong>{language === "en" ? "Stages & Projects" : "阶段与项目"}</strong></div>
+            <nav aria-label={language === "en" ? "Select a project" : "选择项目"}>
               {atlasStages.map((stage) => (
                 <section className="atlas-project-stage" key={stage.id} aria-labelledby={`atlas-stage-${stage.id}`}>
                   <header id={`atlas-stage-${stage.id}`}>
-                    <strong>{stage.title}</strong>
+                    <strong>{localize(stage.title, language)}</strong>
                     <span>{stage.period}</span>
                   </header>
                   <div>
@@ -171,8 +174,8 @@ export function InlineProjectAtlas() {
                           aria-pressed={selected.id === project.id}
                         >
                           <span>{String(index + 1).padStart(2, "0")}</span>
-                          <strong>{project.title}</strong>
-                          {matchLevel ? <em>{ownershipLabels[matchLevel]}</em> : null}
+                          <strong>{localize(project.title, language)}</strong>
+                          {matchLevel ? <em>{ownershipLabels[language][matchLevel]}</em> : null}
                         </button>
                       );
                     })}
@@ -185,15 +188,15 @@ export function InlineProjectAtlas() {
           <div className="atlas-stack">
             <article className={`atlas-project-focus tone-${selected.tone}`}>
               <div className="atlas-focus-head">
-                {selected.image ? <img className="atlas-project-image" src={withBasePath(selected.image)} alt={`${selected.title} 项目图片`} /> : null}
-                <div><h3>{selected.title}</h3><p>{selected.summary}</p></div>
+                {selected.image ? <img className="atlas-project-image" src={withBasePath(selected.image)} alt={language === "en" ? `${localize(selected.title, language)} project` : `${localize(selected.title, language)} 项目图片`} /> : null}
+                <div><h3>{localize(selected.title, language)}</h3><p>{localize(selected.summary, language)}</p></div>
                 {selected.link && source ? (
                   <a className="evidence-icon" href={selected.link} target="_blank" rel="noreferrer" aria-label={source.label} title={source.label}>
                     <img src={source.icon} alt="" />
                   </a>
                 ) : null}
               </div>
-              <ul>{selected.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
+              <ul>{selected.evidence[language].map((item) => <li key={item}>{item}</li>)}</ul>
             </article>
 
             <article className="atlas-system-map">
@@ -204,7 +207,7 @@ export function InlineProjectAtlas() {
                     <div className="atlas-layer-title"><span>{String(7 - index).padStart(2, "0")}</span><h4>{layer.title}</h4></div>
                     <div className="atlas-layer-nodes">
                       {layer.nodes.map((node) => (
-                        <SkillNode key={node.id} node={node} projectId={selected.id} selectedTech={selectedTech} onSelectTech={chooseTech} />
+                        <SkillNode key={node.id} node={node} projectId={selected.id} language={language} selectedTech={selectedTech} onSelectTech={chooseTech} />
                       ))}
                     </div>
                   </section>
@@ -222,7 +225,7 @@ export function InlineProjectAtlas() {
                         <h4>{group.title}</h4>
                         <div>
                           {group.nodes.map((node) => (
-                            <SkillNode key={node.id} node={node} projectId={selected.id} selectedTech={selectedTech} onSelectTech={chooseTech} />
+                            <SkillNode key={node.id} node={node} projectId={selected.id} language={language} selectedTech={selectedTech} onSelectTech={chooseTech} />
                           ))}
                         </div>
                       </section>
@@ -238,7 +241,7 @@ export function InlineProjectAtlas() {
                 <div>
                   {matchingProjects.map((project) => {
                     const level = project.skills[selectedTech];
-                    return <button key={project.id} onClick={() => chooseProject(project.id)}><strong>{project.title}</strong><span>{ownershipLabels[level]}</span></button>;
+                    return <button key={project.id} onClick={() => chooseProject(project.id)}><strong>{localize(project.title, language)}</strong><span>{ownershipLabels[language][level]}</span></button>;
                   })}
                 </div>
               </aside>

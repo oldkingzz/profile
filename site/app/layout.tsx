@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
+import { LanguageProvider } from "./language";
 import { withBasePath } from "./paths";
 
 const title = "Vincent Wang 王泽森 · Robotics & Research";
 const description =
-  "Vincent Wang 的机器人系统、控制与智能研究档案：从完整工程实践走向 VLA 后训练研究。";
+  "Vincent Wang's portfolio in robotics systems, control, and embodied intelligence research, from complete engineering systems to VLA post-training.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -32,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
-      <body>{children}</body>
+    <html lang="en">
+      <body><LanguageProvider>{children}</LanguageProvider></body>
     </html>
   );
 }

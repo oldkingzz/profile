@@ -5,7 +5,7 @@ const githubPagesBasePath = process.env.GITHUB_PAGES === "true" ? "/profile" : "
 const nextConfig: NextConfig = {
   basePath: githubPagesBasePath,
   assetPrefix: githubPagesBasePath,
-  trailingSlash: true,
+  trailingSlash: process.env.GITHUB_PAGES === "true",
 };
 
 export default nextConfig;

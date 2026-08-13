@@ -111,7 +111,7 @@ button {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 28px;
 }
 
 .main-nav a {
@@ -139,24 +139,6 @@ button {
 
 .main-nav a:hover::after {
   transform: scaleX(1);
-}
-
-.language-switch {
-  justify-self: end;
-  display: flex;
-  gap: 7px;
-  color: var(--soft);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-}
-
-.language-switch .active {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-.language-switch .divider {
-  color: var(--line-strong);
 }
 
 .section-kicker {
@@ -1223,7 +1205,47 @@ h3 {
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 13px;
+}
+
+.language-toggle {
+  min-height: 34px;
+  display: inline-grid;
+  grid-template-columns: auto 1px auto;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.72);
+  color: var(--soft);
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  border-color: var(--sage);
+  background: var(--paper);
+  outline: none;
+}
+
+.language-toggle i {
+  width: 1px;
+  height: 13px;
+  background: var(--line-strong);
+}
+
+.language-toggle span {
+  min-width: 20px;
+  text-align: center;
+}
+
+.language-toggle span.active {
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .header-actions a {

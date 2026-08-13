@@ -22,28 +22,29 @@ async function render(pathname = "/") {
   );
 }
 
-test("renders the job-search portfolio homepage", async () => {
+test("renders English as the default portfolio language", async () => {
   const response = await render();
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /<title>Vincent Wang 王泽森 · Robotics &amp; Research<\/title>/);
-  assert.match(html, /项目与技术栈/);
-  assert.match(html, /阶段与项目/);
-  assert.match(html, /Robocon 自主机器人系统/);
-  assert.match(html, /C\/C\+\+/);
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /From complete robot systems to embodied intelligence research\./);
+  assert.match(html, /Projects &amp; Technology Stack/);
+  assert.match(html, /Stages &amp; Projects/);
+  assert.match(html, /Robocon Autonomous Robot System/);
+  assert.match(html, /Switch to Chinese/);
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/sansenpai\//);
   assert.doesNotMatch(html, /招聘者先看到|赛索德|Synthoid|\bFOC\b/);
 });
 
-test("renders the supporting pages", async () => {
+test("renders English supporting pages", async () => {
   const [journey, projects] = await Promise.all([
-    render("/journey/"),
-    render("/projects/"),
+    render("/journey"),
+    render("/projects"),
   ]);
 
   assert.equal(journey.status, 200);
   assert.equal(projects.status, 200);
-  assert.match(await journey.text(), /成长路径/);
-  assert.match(await projects.text(), /项目与技术栈/);
+  assert.match(await journey.text(), /Growth has not been linear/);
+  assert.match(await projects.text(), /Projects &amp; Technology Stack/);
 });
