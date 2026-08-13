@@ -12,6 +12,7 @@ import {
   horizontalMaps,
   ownershipLabels,
   systemLayers,
+  technologyLabel,
 } from "./atlas-data";
 import { localize, type Language, useLanguage } from "./language";
 import { withBasePath } from "./paths";
@@ -59,7 +60,7 @@ function SkillNode({ node, projectId, language, selectedTech, onSelectTech }: Sk
 
   const content = (
     <>
-      <span className="atlas-capability-name">{node.label}</span>
+      <span className="atlas-capability-name">{technologyLabel(node.label, language)}</span>
       <span className={`atlas-level level-${level}`}>{ownershipLabels[language][level]}</span>
     </>
   );
@@ -88,10 +89,10 @@ function SkillNode({ node, projectId, language, selectedTech, onSelectTech }: Sk
 
               return methodFilterable ? (
                 <button key={method.id} className={methodClass} onClick={() => onSelectTech(method.id)} aria-pressed={selectedTech === method.id}>
-                  {method.label}
+                  {technologyLabel(method.label, language)}
                 </button>
               ) : (
-                <span key={method.id} className={methodClass}>{method.label}</span>
+                <span key={method.id} className={methodClass}>{technologyLabel(method.label, language)}</span>
               );
             })}
         </div>
@@ -200,11 +201,11 @@ export function InlineProjectAtlas() {
             </article>
 
             <article className="atlas-system-map">
-              <header><h3>Robotics & Autonomous Systems</h3></header>
+              <header><h3>{language === "en" ? "Robotics & Autonomous Systems" : "机器人与自主系统"}</h3></header>
               <div className="atlas-system-layers">
                 {systemLayers.map((layer, index) => (
                   <section className="atlas-layer" key={layer.title}>
-                    <div className="atlas-layer-title"><span>{String(7 - index).padStart(2, "0")}</span><h4>{layer.title}</h4></div>
+                    <div className="atlas-layer-title"><span>{String(7 - index).padStart(2, "0")}</span><h4>{technologyLabel(layer.title, language)}</h4></div>
                     <div className="atlas-layer-nodes">
                       {layer.nodes.map((node) => (
                         <SkillNode key={node.id} node={node} projectId={selected.id} language={language} selectedTech={selectedTech} onSelectTech={chooseTech} />
@@ -218,11 +219,11 @@ export function InlineProjectAtlas() {
             <div className="atlas-horizontal-maps">
               {horizontalMaps.map((map) => (
                 <article className="atlas-horizontal-map" key={map.title}>
-                  <header><h3>{map.title}</h3></header>
+                  <header><h3>{technologyLabel(map.title, language)}</h3></header>
                   <div className="atlas-horizontal-groups">
                     {map.groups.map((group) => (
                       <section key={group.title}>
-                        <h4>{group.title}</h4>
+                        <h4>{technologyLabel(group.title, language)}</h4>
                         <div>
                           {group.nodes.map((node) => (
                             <SkillNode key={node.id} node={node} projectId={selected.id} language={language} selectedTech={selectedTech} onSelectTech={chooseTech} />
@@ -237,7 +238,7 @@ export function InlineProjectAtlas() {
 
             {selectedTech ? (
               <aside className="atlas-inspector visible" aria-live="polite">
-                <h3>{skillLabels.get(selectedTech) ?? selectedTech}</h3>
+                <h3>{technologyLabel(skillLabels.get(selectedTech) ?? selectedTech, language)}</h3>
                 <div>
                   {matchingProjects.map((project) => {
                     const level = project.skills[selectedTech];
