@@ -28,7 +28,7 @@ test("renders English as the default portfolio language", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="en">/);
-  assert.match(html, /From complete robot systems to embodied intelligence research\./);
+  assert.match(html, /From real robot systems to VLA research\./);
   assert.match(html, /Projects &amp; Technology Stack/);
   assert.match(html, /Stages &amp; Projects/);
   assert.match(html, /Robocon Autonomous Robot System/);
@@ -36,7 +36,10 @@ test("renders English as the default portfolio language", async () => {
   assert.match(html, /mailto:wang2003@engineering\.upenn\.edu/);
   assert.doesNotMatch(html, /Wang2003@seas\.upenn\.edu/i);
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/sansenpai\//);
-  assert.doesNotMatch(html, /招聘者先看到|赛索德|Synthoid|\bFOC\b/);
+  assert.match(html, /Synthoid\.ai/);
+  assert.match(html, /Path-OPD/);
+  assert.match(html, /\/VincentWangCV\.docx/);
+  assert.doesNotMatch(html, /招聘者先看到|\bFOC\b|Wang2003@seas\.upenn\.edu|under review at ICLR|submitted to ICLR|VLA autonomously/i);
 });
 
 test("renders English supporting pages", async () => {

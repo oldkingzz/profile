@@ -102,9 +102,44 @@ export const stages: JourneyStage[] = [
       zh: "继续保持从硬件到软件的工程闭环，同时建立更严格的研究阅读、实验验证和技术表达方法。",
     },
     transition: {
-      en: "I am currently focused on VLA post-training while building reproducible research and public artifacts that can support longer-term work.",
-      zh: "目前聚焦 VLA 后训练，并继续积累可复现的研究工作与公开成果。",
+      en: "This foundation led into a 2026 VLA research internship at Synthoid.ai, where systems work and research methodology met on real-robot problems.",
+      zh: "这些基础进一步导向 2026 年在 Synthoid.ai 的 VLA 研究实习，让系统工程与研究方法在真机问题中汇合。",
     },
     tone: "blue",
+  },
+  {
+    id: "synthoid",
+    years: { en: "May 18 — Aug 21, 2026", zh: "2026.05.18 — 2026.08.21" },
+    place: "Synthoid.ai",
+    role: { en: "VLA Research Intern", zh: "VLA 实习研究员" },
+    context: {
+      en: "Worked across real-robot infrastructure, proprietary VLA training, and an independently owned research problem in an industrial research environment.",
+      zh: "在工业研究环境中同时推进真机基础设施、公司自研 VLA 训练和个人独立研究问题。",
+    },
+    question: {
+      en: "How can real-robot systems and controlled experiments make VLA post-training more effective and more trustworthy?",
+      zh: "怎样让真机系统和严格对照实验共同推动更有效、更可信的 VLA 后训练？",
+    },
+    work: {
+      en: [
+        "7-DoF industrial-arm control, teleoperation, data collection, and robot-side VLA adapter",
+        "Early proprietary VLA training, distributed execution, checkpoint management, and initial ablations",
+        "Path-OPD: independently defined online policy distillation for flow-matching VLAs",
+      ],
+      zh: [
+        "7 自由度工业机械臂控制、遥操作、数据采集与机器人端 VLA adapter",
+        "公司自研 VLA 前期训练、分布式运行、checkpoint 管理与初始消融",
+        "Path-OPD：独立定义面向 flow-matching VLA 的在线策略蒸馏方法",
+      ],
+    },
+    ownership: {
+      en: "Independently owned the robot SDK control and VLA adapter; deeply contributed to early model training; solely defined, implemented, evaluated, and wrote the Path-OPD study.",
+      zh: "独立负责机器人 SDK 控制与 VLA adapter；深度参与模型前期训练；独立完成 Path-OPD 的问题定义、方法、实现、评测与论文写作。",
+    },
+    transition: {
+      en: "This experience connected systems ownership with independent research and established a concrete foundation for continued work in VLA post-training at Penn.",
+      zh: "这段经历把系统 ownership 与独立研究连接起来，为返回 Penn 后继续推进 VLA 后训练研究建立了具体基础。",
+    },
+    tone: "clay",
   },
 ];

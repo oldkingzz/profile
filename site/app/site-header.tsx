@@ -38,7 +38,7 @@ export function SiteHeader() {
           <span className={language === "zh" ? "active" : ""}>中文</span>
         </button>
         <a href="https://github.com/oldkingzz" target="_blank" rel="noreferrer">GitHub</a>
-        <a className="header-cv" href="https://raw.githubusercontent.com/oldkingzz/profile/main/static/VincentWangCV.docx" target="_blank" rel="noreferrer">CV ↗</a>
+        <a className="header-cv" href={withBasePath("/VincentWangCV.docx")} target="_blank" rel="noreferrer">CV ↗</a>
       </div>
     </header>
   );
@@ -47,11 +47,11 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div><strong>Vincent Wang · 王泽森</strong><span>Penn MEAM · Robotics, Controls & VLA Post-training</span></div>
+      <div><strong>Vincent Wang · 王泽森</strong><span>Penn MEAM · Real-Robot Systems & VLA Post-training</span></div>
       <div className="footer-links">
         <a href="https://github.com/oldkingzz" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/sansenpai/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://raw.githubusercontent.com/oldkingzz/profile/main/static/VincentWangCV.docx" target="_blank" rel="noreferrer">CV</a>
+        <a href={withBasePath("/VincentWangCV.docx")} target="_blank" rel="noreferrer">CV</a>
         <a href="mailto:wang2003@engineering.upenn.edu">wang2003@engineering.upenn.edu</a>
       </div>
     </footer>

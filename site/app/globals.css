@@ -2624,7 +2624,9 @@ html {
 
 .atlas-projects {
   top: 24px;
-  overflow: hidden;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border-radius: 4px;
   box-shadow: 0 14px 38px rgba(75, 69, 55, 0.06);
 }

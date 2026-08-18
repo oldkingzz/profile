@@ -113,7 +113,7 @@ function SkillNode({ node, projectId, language, selectedTech, onSelectTech }: Sk
 
 export function InlineProjectAtlas() {
   const { language } = useLanguage();
-  const [selectedId, setSelectedId] = useState<AtlasProjectId>("robocon");
+  const [selectedId, setSelectedId] = useState<AtlasProjectId>("synthoid_robot");
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const selected = useMemo(() => findAtlasProject(selectedId), [selectedId]);
 
@@ -130,7 +130,7 @@ export function InlineProjectAtlas() {
   const chooseTech = (skillId: string) => {
     if (selectedTech === skillId) {
       setSelectedTech(null);
-      setSelectedId("robocon");
+      setSelectedId("synthoid_robot");
       return;
     }
 

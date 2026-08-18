@@ -5,7 +5,7 @@ import { localize, type LocalizedText, useLanguage } from "./language";
 import { withBasePath } from "./paths";
 import { SiteFooter, SiteHeader } from "./site-header";
 
-const cvUrl = "https://raw.githubusercontent.com/oldkingzz/profile/main/static/VincentWangCV.docx";
+const cvUrl = withBasePath("/VincentWangCV.docx");
 
 type Experience = {
   period: LocalizedText;
@@ -17,6 +17,28 @@ type Experience = {
 };
 
 const experiences: Experience[] = [
+  {
+    period: { en: "May 18 — Aug 21, 2026", zh: "2026.05.18 — 2026.08.21" },
+    place: "Synthoid.ai",
+    role: "VLA Research Intern",
+    intro: {
+      en: "Built real-robot VLA infrastructure, contributed to proprietary model training, and independently led an online policy-distillation study.",
+      zh: "搭建真机 VLA 基础设施，深度参与公司自研模型训练，并独立主导在线策略蒸馏研究。",
+    },
+    points: {
+      en: [
+        "Independently built 7-DoF industrial-arm SDK control and a robot-side VLA adapter; led stable human teleoperation and LeRobot data collection",
+        "Deeply contributed to early proprietary VLA training through distributed runs, checkpoint management, initial ablations, and key failure diagnosis",
+        "Independently led Path-OPD from problem formulation through matched experiments and manuscript preparation; obtained positive results over endpoint DAgger",
+      ],
+      zh: [
+        "独立完成 7 自由度工业机械臂 SDK 控制与机器人端 VLA adapter，主导稳定遥操作和 LeRobot 数据采集",
+        "深度参与公司自研 VLA 的前期训练，负责分布式运行、checkpoint 管理、初始消融与关键故障定位",
+        "独立主导 Path-OPD 的问题定义、方法、实现、matched 实验和论文写作，取得优于 endpoint DAgger 的正向结果",
+      ],
+    },
+    tone: "blue",
+  },
   {
     period: { en: "Sep 2025 — May 2027 (expected)", zh: "2025.09 — 2027.05（预计）" },
     place: "University of Pennsylvania",
@@ -75,8 +97,8 @@ const experiences: Experience[] = [
 
 const copy = {
   en: {
-    heroTitle: "From complete robot systems to embodied intelligence research.",
-    heroBody: "M.S. student in MEAM at the University of Pennsylvania, focused on VLA post-training. My work spans robot control, embedded systems, autonomous navigation, and deep learning, with an emphasis on complete systems and verifiable results.",
+    heroTitle: "From real robot systems to VLA research.",
+    heroBody: "M.S. student in MEAM at the University of Pennsylvania. I build real-robot control and data infrastructure, contribute to VLA training systems, and independently study VLA post-training with matched, closed-loop experiments.",
     explore: "Explore project × skill map",
     viewCv: "View CV",
     portraitAlt: "Portrait of Vincent Wang",
@@ -89,8 +111,8 @@ const copy = {
     contactBody: "Open to internships, full-time roles, and research collaborations.",
   },
   zh: {
-    heroTitle: "从完整机器人系统，走向具身智能研究。",
-    heroBody: "宾夕法尼亚大学 MEAM 硕士生，研究兴趣聚焦 VLA 后训练。过往工作覆盖机器人控制、嵌入式、自主导航与深度学习，重视系统落地和可验证的实验结果。",
+    heroTitle: "从真实机器人系统，走向 VLA 研究。",
+    heroBody: "宾夕法尼亚大学 MEAM 硕士生。我搭建真机控制与数据基础设施，参与 VLA 训练系统研发，并以匹配的闭环实验独立研究 VLA 后训练问题。",
     explore: "查看项目技术图",
     viewCv: "查看 CV",
     portraitAlt: "Vincent Wang 的个人头像",
@@ -137,8 +159,8 @@ export default function Home() {
       <section className="credibility-strip">
         <div className="section-shell">
           <div><span>CURRENT</span><strong>Penn MEAM M.S.</strong></div>
-          <div><span>FOCUS</span><strong>Robotics · VLA Post-training</strong></div>
-          <div><span>BACKGROUND</span><strong>Controls · Embedded · AI</strong></div>
+          <div><span>FOCUS</span><strong>Robot Learning · VLA Post-training</strong></div>
+          <div><span>BACKGROUND</span><strong>Real Robots · Training · Research</strong></div>
           <div><span>LOCATION</span><strong>Philadelphia, PA</strong></div>
         </div>
       </section>
