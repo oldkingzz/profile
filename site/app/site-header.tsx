@@ -11,6 +11,7 @@ const navigation = {
 export function SiteHeader() {
   const { language, toggleLanguage } = useLanguage();
   const nav = navigation[language];
+  const cvUrl = withBasePath(language === "en" ? "/Vincent_Wang_CV_EN.pdf" : "/Vincent_Wang_CV_ZH.pdf");
 
   return (
     <header className="site-header">
@@ -38,20 +39,23 @@ export function SiteHeader() {
           <span className={language === "zh" ? "active" : ""}>中文</span>
         </button>
         <a href="https://github.com/oldkingzz" target="_blank" rel="noreferrer">GitHub</a>
-        <a className="header-cv" href={withBasePath("/VincentWangCV.docx")} target="_blank" rel="noreferrer">CV ↗</a>
+        <a className="header-cv" href={cvUrl} target="_blank" rel="noreferrer">CV · {language === "en" ? "EN" : "中文"} ↗</a>
       </div>
     </header>
   );
 }
 
 export function SiteFooter() {
+  const { language } = useLanguage();
+  const cvUrl = withBasePath(language === "en" ? "/Vincent_Wang_CV_EN.pdf" : "/Vincent_Wang_CV_ZH.pdf");
+
   return (
     <footer className="site-footer">
       <div><strong>Vincent Wang · 王泽森</strong><span>Penn MEAM · Real-Robot Systems & VLA Post-training</span></div>
       <div className="footer-links">
         <a href="https://github.com/oldkingzz" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/sansenpai/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href={withBasePath("/VincentWangCV.docx")} target="_blank" rel="noreferrer">CV</a>
+        <a href={cvUrl} target="_blank" rel="noreferrer">CV · {language === "en" ? "EN" : "中文"}</a>
         <a href="mailto:wang2003@engineering.upenn.edu">wang2003@engineering.upenn.edu</a>
       </div>
     </footer>

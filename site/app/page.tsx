@@ -5,8 +5,6 @@ import { localize, type LocalizedText, useLanguage } from "./language";
 import { withBasePath } from "./paths";
 import { SiteFooter, SiteHeader } from "./site-header";
 
-const cvUrl = withBasePath("/VincentWangCV.docx");
-
 type Experience = {
   period: LocalizedText;
   place: string;
@@ -129,6 +127,7 @@ const copy = {
 export default function Home() {
   const { language } = useLanguage();
   const text = copy[language];
+  const cvUrl = withBasePath(language === "en" ? "/Vincent_Wang_CV_EN.pdf" : "/Vincent_Wang_CV_ZH.pdf");
 
   return (
     <main>

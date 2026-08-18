@@ -38,7 +38,8 @@ test("renders English as the default portfolio language", async () => {
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/sansenpai\//);
   assert.match(html, /Synthoid\.ai/);
   assert.match(html, /Path-OPD/);
-  assert.match(html, /\/VincentWangCV\.docx/);
+  assert.match(html, /\/Vincent_Wang_CV_EN\.pdf/);
+  assert.doesNotMatch(html, /VincentWangCV\.docx/);
   assert.doesNotMatch(html, /招聘者先看到|\bFOC\b|Wang2003@seas\.upenn\.edu|under review at ICLR|submitted to ICLR|VLA autonomously/i);
 });
 

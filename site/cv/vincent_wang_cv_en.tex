@@ -1,0 +1,62 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{resume-style}
+\setmainfont{Avenir Next}
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Vincent Wang - Curriculum Vitae},
+  pdfauthor={Vincent Wang},
+  pdfsubject={Robotics Systems, VLA Research, and VLA Post-training}
+}
+
+\begin{document}
+
+\cvname{Vincent Wang}
+\cvtagline{Robotics Systems \textbar{} Vision-Language-Action Models \textbar{} VLA Post-training}
+\cvcontact{Philadelphia, PA \enspace\textbar\enspace +1 267-257-9120 \enspace\textbar\enspace
+  \href{mailto:wang2003@engineering.upenn.edu}{wang2003@engineering.upenn.edu} \enspace\textbar\enspace
+  \href{https://www.linkedin.com/in/sansenpai/}{LinkedIn} \enspace\textbar\enspace
+  \href{https://github.com/oldkingzz}{GitHub} \enspace\textbar\enspace
+  \href{https://oldkingzz.github.io/profile/}{Portfolio}}
+
+\cvsection{Education}
+\cventry{University of Pennsylvania}{Expected May 2027}{M.S. in Mechanical Engineering and Applied Mechanics - Mechatronics and Robotics}
+\begin{cvitems}
+  \item Coursework: Advanced Dynamics, Mechatronic Systems, Engineering Mathematics, Operating Systems.
+\end{cvitems}
+
+\cventry{East China University of Science and Technology}{June 2025}{B.Eng. in Intelligent Manufacturing Engineering \textbar{} GPA: 3.6/4.0 \textbar{} Top 15\%}
+\vspace{1.4pt}
+
+\cvsection{Experience}
+\cventry{Synthoid.ai \textbar{} VLA Research Intern}{May 18 - Aug 21, 2026}{Real-robot infrastructure, VLA training, and independent policy-distillation research}
+\begin{cvitems}
+  \item Independently built the robot-side SDK control and VLA adapter for a 7-DoF industrial arm, adding Cartesian end-effector control, multi-rate interpolation, and automatic recovery; delivered stable human teleoperation.
+  \item Led teleoperation and real-robot data collection with a dexterous hand, head/wrist cameras, and LeRobot; synchronized multimodal timestamps and screened abnormal trajectories with first- through third-order action derivatives.
+  \item Deeply contributed to early training of a proprietary VLA model through training implementation and configuration, distributed runs, checkpoint management, initial ablations, and failure diagnosis; identified a gripper-dimension output-contract mismatch.
+  \item Independently defined and implemented Path-OPD for flow-matching VLA distillation. Under matched on-policy occupancy, Teacher-query, training, and evaluation budgets, it achieved higher closed-loop success than endpoint DAgger. Preparing an ICLR 2027 submission.
+\end{cvitems}
+
+\cventry{Shanghai Wuji Technology \textbar{} Robotics Control Intern}{July - Sept 2024}{Dexterous-hand teleoperation and low-level motor control}
+\begin{cvitems}
+  \item Re-architected an unstable impedance loop into an admittance controller with torque feedback in MATLAB/Simulink for dexterous-hand teleoperation.
+  \item Developed Linux C++ host software for reliable CAN communication and low-level control across approximately 30 motors.
+\end{cvitems}
+
+\cvsection{Selected Research \& Leadership}
+\cventry{ECUST Robocon Team \textbar{} Co-founder \& Control Lead}{Sept 2022 - July 2024}{Autonomous robot systems and interdisciplinary technical leadership}
+\begin{cvitems}
+  \item Built the team's first STM32 motion-control system and integrated Point-LIO, YOLO (approximately 20 FPS embedded), MoveIt, and chassis control into an autonomous robot stack.
+  \item Led a 20-member interdisciplinary team, owned system architecture and technology selection, and directed technical training for 60 new members.
+\end{cvitems}
+
+\cvcompactentry{MDATS - Multi-Domain Adaptive Classification for Mechanical Fault Detection}{IEEE MEAE 2024}
+\begin{cvitems}
+  \item First author; built the PyTorch research pipeline and achieved 88.27\% target-domain accuracy, a 40.6-point absolute improvement over baseline.
+\end{cvitems}
+
+\cvsection{Technical Skills}
+\cvskill{Languages \& Systems}{Python, C/C++, Rust, Linux, Git, CMake, ROS 2, CAN}
+\cvskill{Robotics \& Control}{Cartesian control, teleoperation, impedance/admittance control, STM32/ESP32, FreeRTOS, MoveIt}
+\cvskill{Learning \& Research}{PyTorch, distributed training, VLA post-training, flow matching, policy distillation, LeRobot, experimental design}
+
+\end{document}
