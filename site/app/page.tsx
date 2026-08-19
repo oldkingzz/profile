@@ -57,7 +57,7 @@ const experiences: Experience[] = [
   },
   {
     period: { en: "Jul 2024 — Sep 2024", zh: "2024.07 — 2024.09" },
-    place: "Shanghai Wuji Technology",
+    place: "Wuji Tech",
     role: "Robotics Control Intern",
     intro: {
       en: "Contributed to early dexterous-hand teleoperation and multi-motor control R&D, bringing control theory into real sensing, actuation, and communication systems.",

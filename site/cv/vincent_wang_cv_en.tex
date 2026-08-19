@@ -32,17 +32,24 @@
 \begin{cvitems}
   \item Independently built the robot-side SDK control and VLA adapter for a 7-DoF industrial arm, adding Cartesian end-effector control, multi-rate interpolation, and automatic recovery; delivered stable human teleoperation.
   \item Led teleoperation and real-robot data collection with a dexterous hand, head/wrist cameras, and LeRobot; synchronized multimodal timestamps and screened abnormal trajectories with first- through third-order action derivatives.
-  \item Deeply contributed to early training of a proprietary VLA model through training implementation and configuration, distributed runs, checkpoint management, initial ablations, and failure diagnosis; identified a gripper-dimension output-contract mismatch.
-  \item Independently defined and implemented Path-OPD for flow-matching VLA distillation. Under matched on-policy occupancy, Teacher-query, training, and evaluation budgets, it achieved higher closed-loop success than endpoint DAgger. Preparing an ICLR 2027 submission.
+  \item Resolved abnormal motion from 7-DoF IK ambiguity and traced replay-accuracy failures to an incorrect URDF used by inverse kinematics.
+  \item Deeply contributed to early training of a proprietary VLA model through training implementation/configuration, distributed runs, checkpoint management, initial ablations, and failure diagnosis; identified a gripper-dimension output-contract mismatch and GPU ECC hardware failures.
+  \item Independently defined and implemented Path-OPD for flow-matching VLA distillation, saving the student's inner solver chain and querying frozen-Teacher velocities with gradient isolation. Under matched occupancy, Teacher-query, training, and evaluation budgets, it achieved higher closed-loop success than endpoint DAgger. Preparing an ICLR 2027 submission.
 \end{cvitems}
 
-\cventry{Shanghai Wuji Technology \textbar{} Robotics Control Intern}{July - Sept 2024}{Dexterous-hand teleoperation and low-level motor control}
+\cventry{Wuji Tech \textbar{} Robotics Control Intern}{July - Sept 2024}{Dexterous-hand teleoperation and low-level motor control}
 \begin{cvitems}
   \item Re-architected an unstable impedance loop into an admittance controller with torque feedback in MATLAB/Simulink for dexterous-hand teleoperation.
   \item Developed Linux C++ host software for reliable CAN communication and low-level control across approximately 30 motors.
 \end{cvitems}
 
-\cvsection{Selected Research \& Leadership}
+\cvsection{Selected Projects, Research \& Leadership}
+\cventry{University of Pennsylvania \textbar{} Systems \& Robotics Projects}{2025 - 2026}{Embedded autonomy and operating-systems engineering}
+\begin{cvitems}
+  \item Built a closed-loop autonomous mobile robot on ESP32/FreeRTOS, integrating sensing, Vive/EKF localization, A* planning, chassis control, mission FSM, and system validation.
+  \item Implemented and debugged PennOS in C, including processes, scheduling, system calls, signals, a file system, and a shell.
+\end{cvitems}
+
 \cventry{ECUST Robocon Team \textbar{} Co-founder \& Control Lead}{Sept 2022 - July 2024}{Autonomous robot systems and interdisciplinary technical leadership}
 \begin{cvitems}
   \item Built the team's first STM32 motion-control system and integrated Point-LIO, YOLO (approximately 20 FPS embedded), MoveIt, and chassis control into an autonomous robot stack.
@@ -57,6 +64,8 @@
 \cvsection{Technical Skills}
 \cvskill{Languages \& Systems}{Python, C/C++, Rust, Linux, Git, CMake, ROS 2, CAN}
 \cvskill{Robotics \& Control}{Cartesian control, teleoperation, impedance/admittance control, STM32/ESP32, FreeRTOS, MoveIt}
-\cvskill{Learning \& Research}{PyTorch, distributed training, VLA post-training, flow matching, policy distillation, LeRobot, experimental design}
+\cvskill{VLA \& Training}{PyTorch, distributed training, VLA post-training, flow matching, online policy distillation, action-head fine-tuning, RLinf, Pi0.5}
+\cvskill{Robot Data \& Evaluation}{LeRobot, multi-camera data, timestamp synchronization, trajectory screening, closed-loop evaluation}
+\cvskill{Research Operations}{Matched experiments, checkpoint management, training diagnostics, CUDA, Teacher-NFE and wall-clock accounting}
 
 \end{document}

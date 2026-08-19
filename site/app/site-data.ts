@@ -52,7 +52,7 @@ export const stages: JourneyStage[] = [
   {
     id: "industry",
     years: { en: "Jul 2024 — Sep 2024", zh: "2024.07 — 2024.09" },
-    place: "Shanghai Wuji Technology",
+    place: "Wuji Tech",
     role: { en: "Robotics Control Intern", zh: "Robotics Control Intern" },
     context: {
       en: "Worked with interaction control, sensor feedback, multi-actuator communication, and cross-functional collaboration in a real R&D environment.",
