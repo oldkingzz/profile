@@ -1,0 +1,77 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{resume-style}
+\usepackage{xeCJK}
+\setmainfont{Avenir Next}
+\setCJKmainfont[
+  Path=/System/Library/Fonts/,
+  UprightFont={STHeiti Light.ttc},
+  BoldFont={STHeiti Medium.ttc}
+]{STHeiti Light.ttc}
+\urlstyle{same}
+\hypersetup{
+  pdftitle={王泽森 - 中文简历},
+  pdfauthor={王泽森},
+  pdfsubject={机器人系统、VLA 研究与 VLA 后训练}
+}
+
+\begin{document}
+
+\cvname{王泽森 \fontsize{13}{15}\selectfont Vincent Wang}
+\cvtagline{机器人系统 \textbar{} 视觉-语言-动作模型 \textbar{} VLA 后训练}
+\cvcontact{美国宾夕法尼亚州费城 \enspace\textbar\enspace +1 267-257-9120 \enspace\textbar\enspace
+  \href{mailto:wang2003@engineering.upenn.edu}{wang2003@engineering.upenn.edu} \enspace\textbar\enspace
+  \href{https://www.linkedin.com/in/sansenpai/}{LinkedIn} \enspace\textbar\enspace
+  \href{https://github.com/oldkingzz}{GitHub} \enspace\textbar\enspace
+  \href{https://oldkingzz.github.io/profile/}{个人网站}}
+
+\cvsection{教育经历}
+\cventry{宾夕法尼亚大学 University of Pennsylvania}{预计 2027 年 5 月毕业}{机械工程与应用力学硕士 - 机电与机器人方向}
+\begin{cvitems}
+  \item 相关课程：高等动力学、机电系统、工程数学、操作系统。
+\end{cvitems}
+
+\cventry{华东理工大学 East China University of Science and Technology}{2025 年 6 月}{智能制造工程学士 \textbar{} GPA：3.6/4.0 \textbar{} 专业前 15\%}
+\vspace{1.4pt}
+
+\cvsection{实习经历}
+\cventry{Synthoid.ai \textbar{} VLA 实习研究员}{2026.05.18 - 2026.08.21}{真机基础设施、VLA 训练与独立策略蒸馏研究}
+\begin{cvitems}
+  \item 独立完成 7 自由度工业机械臂的机器人端 SDK 控制与 VLA adapter，实现笛卡尔末端位姿控制、分层控制频率、轨迹插值和自动恢复；交付稳定的人类遥操作链路。
+  \item 主导灵巧手、头部/腕部相机与 LeRobot 数据格式下的遥操作和真机数据采集；完成多模态时间戳同步，并基于动作一至三阶导数筛查异常轨迹。
+  \item 处理 7 自由度机械臂 IK 多解造成的异常运动，并将回放精度问题定位到 IK 所依赖的错误 URDF。
+  \item 深度参与公司自研 VLA 模型的前期训练，负责训练实现与配置、分布式运行、checkpoint 管理、初始消融和故障诊断；定位 gripper 维度输出 contract 错误与 GPU ECC 硬件故障。
+  \item 独立定义并实现面向 flow-matching VLA 蒸馏的 Path-OPD，保存 student inner solver chain，并在梯度隔离下查询 frozen Teacher velocity。在 occupancy、Teacher query、训练和评测预算匹配的条件下，闭环成功率明显优于 endpoint DAgger；正在准备 ICLR 2027 投稿。
+\end{cvitems}
+
+\cventry{Wuji Tech \textbar{} 机器人控制实习生}{2024 年 7 月 - 9 月}{灵巧手遥操作与底层电机控制}
+\begin{cvitems}
+  \item 在 MATLAB/Simulink 中将不稳定的阻抗控制环重构为带力矩反馈的导纳控制器，用于灵巧手遥操作。
+  \item 开发 Linux C++ 上位机，实现约 30 个电机的可靠 CAN 通信与底层控制。
+\end{cvitems}
+
+\cvsection{代表性项目、研究与领导经历}
+\cventry{University of Pennsylvania \textbar{} 系统与机器人项目}{2025 - 2026}{嵌入式自主系统与操作系统工程}
+\begin{cvitems}
+  \item 在 ESP32/FreeRTOS 上构建自主移动机器人闭环，集成传感、Vive/EKF 定位、A* 规划、底盘控制、任务状态机与系统验证。
+  \item 使用 C 实现并调试 PennOS，覆盖进程、调度、系统调用、信号、文件系统与 Shell。
+\end{cvitems}
+
+\cventry{华东理工大学 Robocon 战队 \textbar{} 联合创始人、控制负责人}{2022 年 9 月 - 2024 年 7 月}{自主机器人系统与跨学科技术领导}
+\begin{cvitems}
+  \item 从零搭建战队首套 STM32 运动控制系统，并将 Point-LIO、YOLO（嵌入式约 20 FPS）、MoveIt 与底盘控制集成为自主机器人系统。
+  \item 带领 20 人跨学科团队，负责系统架构与技术选型，并组织 60 名新成员的技术培训。
+\end{cvitems}
+
+\cvcompactentry{MDATS - 面向机械故障检测的多域自适应分类方法}{IEEE MEAE 2024}
+\begin{cvitems}
+  \item 第一作者；搭建 PyTorch 研究流程，目标域准确率达到 88.27\%，较 baseline 提升 40.6 个百分点。
+\end{cvitems}
+
+\cvsection{技术能力}
+\cvskill{编程与系统}{Python、C/C++、Rust、Linux、Git、CMake、ROS 2、CAN}
+\cvskill{机器人与控制}{笛卡尔控制、遥操作、阻抗/导纳控制、STM32/ESP32、FreeRTOS、MoveIt}
+\cvskill{VLA 与训练}{PyTorch、分布式训练、VLA 后训练、flow matching、online policy distillation、action-head 微调、RLinf、Pi0.5}
+\cvskill{机器人数据与评测}{LeRobot、多相机数据、时间戳同步、轨迹筛选、闭环评测}
+\cvskill{研究与实验运维}{Matched 实验、checkpoint 管理、训练诊断、CUDA、Teacher NFE 与 wall-clock 核算}
+
+\end{document}

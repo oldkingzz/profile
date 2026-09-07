@@ -1,0 +1,83 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{resume-style}
+\setmainfont{Avenir Next}
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Vincent Wang - Curriculum Vitae},
+  pdfauthor={Vincent Wang},
+  pdfsubject={Robotics Systems, VLA Research, and VLA Post-training}
+}
+
+\begin{document}
+
+\cvname{Vincent Wang}
+\cvtagline{Robotics Systems \textbar{} VLA-WAM}
+\cvcontact{Philadelphia, PA \enspace\textbar\enspace +1 267-456-8387 \enspace\textbar\enspace
+  \href{mailto:wang2003@engineering.upenn.edu}{wang2003@engineering.upenn.edu} \enspace\textbar\enspace
+  \href{https://www.linkedin.com/in/sansenpai/}{LinkedIn} \enspace\textbar\enspace
+  \href{https://github.com/oldkingzz}{GitHub} \enspace\textbar\enspace
+  \href{https://oldkingzz.github.io/profile/}{Portfolio}}
+
+\cvsection{Education}
+\cventry{University of Pennsylvania}{Expected May 2027}{M.S. in Mechanical Engineering and Applied Mechanics - Mechatronics and Robotics \textbar{} GPA: 3.81/4.0}
+\begin{cvitems}
+  \item Coursework: Advanced Dynamics, Mechatronic Systems, Engineering Mathematics, Operating Systems.
+\end{cvitems}
+
+\cventry{East China University of Science and Technology}{June 2025}{B.Eng. in Intelligent Manufacturing Engineering \textbar{} GPA: 3.6/4.0 \textbar{} Top 15\%}
+\vspace{1.4pt}
+
+\cvsection{Experience}
+\cventry{Synthoid.ai \textbar{} VLA Research Intern}{May 18 - Aug 21, 2026}{Real-robot infrastructure, VLA training, and independent policy-distillation research}
+\begin{cvitems}
+  \item Independently built SDK control and a VLA adapter for a 7-DoF industrial arm, adding Cartesian control, multi-rate interpolation, and automatic recovery; delivered stable teleoperation.
+  \item Led dexterous-hand teleoperation and LeRobot data collection with head/wrist cameras; synchronized timestamps and screened trajectories using first- through third-order action derivatives.
+  \item Resolved abnormal motion from 7-DoF IK ambiguity and traced replay errors to an incorrect URDF.
+  \item Deeply contributed to proprietary VLA pre-training through implementation/configuration, distributed runs, checkpoint management, ablations, and debugging; found a gripper output-contract mismatch and GPU ECC failures.
+  \item Independently led Path-OPD from problem formulation and method design through implementation, matched experiments, and manuscript writing.
+\end{cvitems}
+
+\cventry{Wuji Tech \textbar{} Robotics Control Intern}{July - Sept 2024}{Dexterous-hand teleoperation and low-level motor control}
+\begin{cvitems}
+  \item Re-architected an unstable impedance loop into a torque-feedback admittance controller in MATLAB/Simulink for dexterous-hand teleoperation.
+  \item Built dexterous-hand connector components and Linux C++ host software for reliable multi-motor CAN control.
+\end{cvitems}
+
+\cvsection{Selected Projects \& Leadership}
+\cventry{ECUST Robocon Team \textbar{} Co-founder \& Control Lead}{Sept 2022 - July 2024}{Autonomous robot systems and interdisciplinary technical leadership}
+\begin{cvitems}
+  \item Built the team's first STM32 motion-control system and integrated Point-LIO, embedded YOLO (approximately 20 FPS), MoveIt, and chassis control into an autonomous robot stack.
+  \item Delivered fixed-scene SLAM navigation, target recognition, and object grasping.
+  \item Led a 20-member interdisciplinary team, owned system architecture and technology selection, and trained 60 new members.
+\end{cvitems}
+
+\cventry{MEAM 510 \textbar{} Autonomous Mobile Robot}{2025}{Embedded autonomous robot system}
+\begin{cvitems}
+  \item Built a closed-loop ESP32/FreeRTOS mobile robot with sensing, Vive/EKF localization, A* planning, chassis control, mission FSM, and system validation.
+\end{cvitems}
+
+\cventry{CIS 5480 \textbar{} PennOS}{2026}{Operating-systems engineering}
+\begin{cvitems}
+  \item Implemented and debugged PennOS in C, including processes, scheduling, system calls, signals, a file system, and a shell.
+\end{cvitems}
+
+\cvsection{Research \& Publications}
+\cvcompactentry{Path-OPD - Online Policy Distillation for Flow-Matching VLAs}{Manuscript in preparation}
+\begin{cvitems}
+  \item First author; independently led formulation, design, implementation, matched experiments, and writing; targeting ICLR 2027.
+\end{cvitems}
+
+\cvcompactentry{MDATS - Multi-Domain Adaptive Classification for Mechanical Fault Detection}{IEEE MEAE 2024 · Published}
+\begin{cvitems}
+  \item First author; achieved 88.27\% target-domain accuracy, 40.6 points over baseline, with a PyTorch pipeline.
+\end{cvitems}
+
+\cvsection{Technical Skills}
+\cvskill{Programming \& Systems}{Python, C/C++, Linux, Git, ROS 2, CAN}
+\cvskill{Robotics \& Control}{Teleoperation, impedance/admittance control, STM32/ESP32, FreeRTOS, MoveIt}
+\cvskill{VLA \& Training}{PyTorch, distributed training, VLA post-training, flow matching, online policy distillation, WAM}
+\cvskill{Robot Data \& Evaluation}{LeRobot, multi-camera data, timestamp synchronization, trajectory screening, closed-loop evaluation}
+\cvskill{Language}{GRE 324, fluent English communication}
+\cvskill{Vibe Coding}{Symphony, harness}
+
+\end{document}
