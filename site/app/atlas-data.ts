@@ -21,6 +21,9 @@ export type AtlasProject = {
   skills: Record<string, Ownership>;
   link?: string;
   image?: string;
+  video?: string;
+  poster?: string;
+  videoCaption?: LocalizedText;
   tone: "sage" | "clay" | "blue" | "gold" | "lilac";
 };
 
@@ -162,7 +165,10 @@ export const atlasProjects: AtlasProject[] = [
       git: 2,
     },
     link: "https://github.com/oldkingzz/ECUST-robocon",
-    image: "/projects/robocon.png",
+    image: "/projects/robocon-2024.jpg",
+    video: "/projects/robocon-2024.mp4",
+    poster: "/projects/robocon-2024-poster.jpg",
+    videoCaption: { en: "Robocon 2024 · R2 robot field test", zh: "Robocon 2024 · R2 机器人场地测试" },
     tone: "sage",
   },
   {
@@ -189,6 +195,7 @@ export const atlasProjects: AtlasProject[] = [
       can: 2,
       sensing: 1,
     },
+    image: "/projects/wuji-hand.jpg",
     tone: "clay",
   },
   {

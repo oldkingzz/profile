@@ -3066,3 +3066,29 @@ button.atlas-method {
 .atlas-project-stage button {
   min-height: 78px;
 }
+
+.atlas-project-video {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: end;
+  margin: 26px 0 0;
+}
+
+.atlas-project-video video {
+  width: 150px;
+  height: 267px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--tone-soft);
+}
+
+.atlas-project-video figcaption {
+  padding-bottom: 6px;
+  color: var(--soft);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

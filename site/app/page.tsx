@@ -150,7 +150,7 @@ export default function Home() {
           </div>
         </div>
         <div className="portrait-wrap">
-          <div className="portrait-frame"><img src={withBasePath("/me.jpg")} alt={text.portraitAlt} /></div>
+          <div className="portrait-frame"><img src={withBasePath("/portrait.jpg")} alt={text.portraitAlt} /></div>
           <div className="availability"><i /><span>{text.availability}</span></div>
         </div>
       </section>

@@ -198,6 +198,12 @@ export function InlineProjectAtlas() {
                 ) : null}
               </div>
               <ul>{selected.evidence[language].map((item) => <li key={item}>{item}</li>)}</ul>
+              {selected.video ? (
+                <figure className="atlas-project-video">
+                  <video src={withBasePath(selected.video)} poster={selected.poster ? withBasePath(selected.poster) : undefined} muted autoPlay loop playsInline preload="metadata" aria-label={language === "en" ? `${localize(selected.title, language)} demo clip` : `${localize(selected.title, language)} 演示片段`} />
+                  {selected.videoCaption ? <figcaption>{localize(selected.videoCaption, language)}</figcaption> : null}
+                </figure>
+              ) : null}
             </article>
 
             <article className="atlas-system-map">
