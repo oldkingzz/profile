@@ -29,6 +29,7 @@ const pages = [
   ["/profile/", "index.html"],
   ["/profile/journey/", "journey/index.html"],
   ["/profile/projects/", "projects/index.html"],
+  ["/profile/megastructures/", "megastructures/index.html"],
 ];
 
 for (const [pathname, filename] of pages) {

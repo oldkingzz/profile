@@ -44,13 +44,16 @@ test("renders English as the default portfolio language", async () => {
 });
 
 test("renders English supporting pages", async () => {
-  const [journey, projects] = await Promise.all([
+  const [journey, projects, megastructures] = await Promise.all([
     render("/journey"),
     render("/projects"),
+    render("/megastructures"),
   ]);
 
   assert.equal(journey.status, 200);
   assert.equal(projects.status, 200);
+  assert.equal(megastructures.status, 200);
   assert.match(await journey.text(), /Growth has not been linear/);
   assert.match(await projects.text(), /Projects &amp; Technology Stack/);
+  assert.match(await megastructures.text(), /<h1[^>]*>Megastructures<\/h1>/);
 });
